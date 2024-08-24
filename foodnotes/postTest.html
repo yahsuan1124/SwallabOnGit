@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>展示發布的文章</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <h1>文章發布的結果</h1>
+    <div id="blog-container"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("../php/fetch_posts.php")
+                .then(response => response.json())
+                .then(posts => {
+                    const blogContainer = document.getElementById("blog-container");
+                    posts.forEach(post => {
+                        const postElement = document.createElement("div");
+                        postElement.classList.add("post");
+
+                        const titleElement = document.createElement("h2");
+                        titleElement.textContent = post.title;
+
+                        const contentElement = document.createElement("div");
+                        contentElement.innerHTML = post.content; // 直接插入HTML內容
+
+                        const createdAtElement = document.createElement("p");
+                        createdAtElement.textContent = "發布時間: " + new Date(post.created_at).toLocaleString();
+
+                        const mealTimeElement = document.createElement("p");
+                        mealTimeElement.textContent = "用餐時間: " + new Date(post.meal_time).toLocaleString();
+
+                        postElement.appendChild(titleElement);
+                        postElement.appendChild(createdAtElement);
+                        postElement.appendChild(mealTimeElement);
+                        postElement.appendChild(contentElement);
+                        
+
+                        blogContainer.appendChild(postElement);
+                    });
+                })
+                .catch(error => console.error("發布錯誤：", error));
+        });
+    </script>
+</body>
+</html>

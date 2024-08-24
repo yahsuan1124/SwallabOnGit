@@ -1,0 +1,213 @@
+header{
+    background-image: none;
+    background-color: #EEE9D5;
+    }
+body{
+    background-image: url("../images/other/subtle_white_feathers.webp");
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+li{margin: 5% 0;}
+footer{
+    background-color: #ecdea8;
+    flex-shrink: 0;
+}
+
+.icon {
+        height: 1.5em;
+    }
+.logo {
+    height: 5em;
+    width: auto;
+    border-radius: 50%;
+}
+.top{
+    position: fixed;
+    bottom: 2%;
+    right:  2%;
+    width: 3%; 
+    cursor: pointer;
+    z-index: 1;
+    }
+.hrStyle{
+    border: 1px solid black;
+    width:80%;
+}
+
+/* 隱藏文字溢出 */
+.ellipsis { 
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 使用省略號表示被隱藏的內容 */
+}
+.ellipsis-6{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:6;
+    overflow: hidden;
+    text-overflow: ellipsis; /* 使用省略號表示被隱藏的內容 */
+}
+
+/* 麵包屑 */
+.bread {
+    list-style-type: none; 
+    /* background-color: #fff; */
+    text-align: center; 
+}
+.bread>li{
+    display: inline-block;
+}
+.bread li::after {
+        content: ">";
+        }
+.bread li:last-child::after {
+    content: "";
+}
+/* 博主頭貼和名字 */
+.author{
+    width: 250px;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 80px;
+}
+.author>div:nth-child(1){
+    height: 80%;
+}
+.author>div:nth-child(1)>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.author>div:nth-child(2){
+    background-color: rgb(229,166,122);
+    color:white;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+/* 社群軟體 */
+.fa-heart{
+    margin:0px 5px;
+    font-size: 25px;
+}
+.fa-instagram{
+    color:#E1306C;
+    margin:0px 5px;
+    font-size: 25px;
+}
+.fa-facebook{
+    color: #4267B2;
+    margin:0px 5px;
+    font-size: 25px;
+}
+#heart{display: none;}
+.fa-instagram,.fa-facebook,.fa-heart:hover{cursor: pointer;}
+/* 右邊文章-內文 */
+.bigArticle>p{
+    width:80%;
+    margin: auto;
+}
+.bigArticle>img{
+    margin: auto;
+    display: block;
+    width:70%;
+}
+.bigArticle+article{
+    width:80%;
+    margin: auto;
+}
+/* 留言評論區-標題 */
+.commentTitle{
+    margin:0 110px;
+}
+.commentTitle>i{
+    font-size: 35px;
+}
+.commentTitle>i:hover{
+    cursor: pointer;
+}
+/* 留言modal視窗 */
+.modal-bg{
+    background-color: #EEE9D5;
+}
+/* 留言modal視窗-header的部分 */
+.modal-bg>div:nth-child(1){
+    border-bottom: 1px solid black;
+}
+.modal-header>div{
+    display: flex;
+    justify-content:center;
+    width: 100%;
+}
+.modal-header>button{
+    display:inline;
+    margin:0%;
+}
+/* 留言modal視窗-body的部分  */
+.modal-body>form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: left;
+}
+.modal-body>form>label{
+    margin-bottom: 8px;
+}
+.modal-body>form>textarea{
+    width: 100%;
+}
+/* 留言modal視窗-footer的部分 */
+.modal-footer>button{
+    background-color: #efa47e;
+    color:white
+}
+.modal-footer>button:hover{
+    color: #efa47e;
+    background-color: white;
+    font-weight: bold;
+}
+/* 留言評論區-會員發表處 */
+.commentHeadphoto{
+    background-color: white;
+    width:80%;
+    border-radius: 30px;
+    box-shadow: 5px 5px 10px 10px lightgray;
+}
+.commentHeadphoto>div:nth-child(1){
+    overflow: hidden;
+    margin: auto;
+}
+.commentHeadphoto > div:nth-child(1) img{
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+.commentHeadphoto>div:nth-child(1)>img+div{
+    margin-top: 15px;
+}
+.commentHeadphoto>div:nth-child(2)>p:nth-child(1){
+    flex: 1;
+    display: flex;
+    padding: 10px 20px 0 20px;
+    font-size: 20px;
+}
+/* .commentHeadphoto>div:nth-child(2)>p:nth-child(3) button{
+    align-self: flex-end;
+    margin-right: 10px;
+    text-align: right;
+    width: 100%;
+    float:right
+} */
+/* #edit{
+   text-align: right; width: 100%
+} */
+#edit button :hover{
+    color: #efa47e!important; 
+    background-color: white!important; 
+}
+#textLine{text-decoration: none;}

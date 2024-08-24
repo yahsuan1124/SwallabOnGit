@@ -1,0 +1,24 @@
+.myFooter {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.btnFooter {
+    /* background-color: #e5a67a !important; */
+    color: white !important;
+    border-radius: 5%;
+    width: 100% !important;
+}
+
+.btnFooter:hover {
+    background-color: #e5a67a !important;
+    color: white !important;
+}
+
+i {
+    color: black;
+}
+
+.rights{
+    font-size: xx-small;
+}

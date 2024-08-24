@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>發布文章</title>
+    <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
+</head>
+<body>
+    <h1>發文</h1>
+    <form id="postForm" method="post" action="save_post.php">
+        <label for="title">標題:</label>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <label for="content">內容:</label>
+        <textarea id="content" name="content" required></textarea>
+        <script>
+            CKEDITOR.replace('content');
+        </script>
+        <br>
+        <label for="meal_time">用餐時間:</label>
+        <input type="datetime-local" id="meal_time" name="meal_time">
+        <br>
+        <button type="submit">送出</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐廳內頁</title>
+    <link rel="stylesheet" href="./../css/detailxi.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
+
+    <!-- header -->
+    <link href="./../css/root.css" rel="stylesheet">
+    <link href="./../css/nav.css" rel="stylesheet">
+    <link href="./../css/footer.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand sticky-top shadow">
+            <div class="container">
+                <!-- LOGO -->
+                <a class="navbar-brand ms-5 col-1" href="http://localhost/swallabLa/swallab/public/headpage/headpage">
+                    <img src="../images/other/logo.jpg" alt=""
+                        class="logo d-inline-block align-text-top">
+                </a>
+                <!-- 伸縮 -->
+                <div class="collapse navbar-collapse col-10" id="navbarSupportedContent">
+                    <div class="nav ms-0 me-3 row">
+                        <div class="nav-item col-6">
+                            <a id="rest" class="nav-link d-block nav_mainbtn"
+                                href="http://localhost/swallabLa/swallab/public/restaurant/detail">找餐廳</a>
+                        </div>
+                        <div class="nav-item col-6">
+                            <a id="resta" class="nav-link d-block nav_mainbtn"
+                                href="http://localhost/swallab/Swallab/foodNotes/foodNotes.html">看食記</a>
+                        </div>
+                    </div>
+                    <!-- Input 都在這 -->
+                    <form class="ms-2 me-1 w-100" role="search" name="search">
+                        <div class="d-flex" style="width: 100%;">
+                            <div id="theicon" class="mt-2 me-0 align-items-center justify-content-center"></div>
+                            <!-- 搜尋框 + 情境按鈕(pill 會改成底線) -->
+                            <div class="d-block position-relative m-0 p-0 col">
+                                <div style="display: flex;" class="row">
+                                    <div class="col-6">
+                                        <input type="text" id="myInput" onclick="myFunction()" placeholder="點擊我"
+                                            class="form-control m-0">
+                                        <div id="myDropdown" class="dropdown-content"
+                                            style="display: none; position: absolute;">
+                                            <a href="#cate_no" onclick="fillInput('null')"
+                                                class="position-relative">不挑分類</a>
+                                            <a href="#cate_hotpot" onclick="fillInput('火鍋')"
+                                                class="position-relative">火鍋</a>
+                                            <a href="#cate_bbq" onclick="fillInput('燒肉')" class="position-relative">燒肉</a>
+                                            <a href="#cate_izakaya" onclick="fillInput('居酒屋')"
+                                                class="position-relative">居酒屋</a>
+                                            <a href="#cate_ramen" onclick="fillInput('拉麵')" class="position-relative">拉麵</a>
+                                            <a href="#cate_dessert" onclick="fillInput('甜點')"
+                                                class="position-relative">甜點</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <input type="text" id="myInput2" onclick="myFunction2()" placeholder="點擊我"
+                                            class="form-control m-0">
+                                        <div id="myDropdown2" class="dropdown-content"
+                                            style="display: none; position: absolute;">
+                                            <a href="#loc_no" onclick="fillInput2('null')"
+                                                class="position-relative">不挑地區</a>
+                                            <a href="#loc_Taichung" onclick="fillInput2('台中市')"
+                                                class="position-relative">台中市</a>
+                                            <a href="#loc_1" onclick="fillInput2('選項2')" class="position-relative">選項2</a>
+                                            <a href="#loc_2" onclick="fillInput2('選項3')" class="position-relative">選項3</a>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                                <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                    style="margin-left: 10%;">
+                                    <img class="icon" src="../images/other/dating.png" alt="">約會
+                                </button>
+                                <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                    style="margin-left: 30%;">
+                                    <img class="icon" src="../images/other/group.png" alt="">聚餐
+                                </button>
+                                <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                    style="margin-left: 50%;">
+                                    <img class="icon" src="../images/other//confetti.png"
+                                        alt="">慶生
+                                </button>
+                                <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                    style="margin-left: 70%;">
+                                    <img class="icon" src="../images/other//handshake.png"
+                                        alt="">商務
+                                </button>
+                                <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                    style="margin-left: 90%;">
+                                    <img class="icon" src="../images/other/disabledpeople.png"
+                                        alt="">無障礙
+                                </button>
+                            </div>
+                            <input type="image" src="../images/other//loupe.png" class="icon mt-2 ms-0"
+                                onclick="document.search.submit()">
+                        </div>
+                    </form>
+                    <!-- 登入及註冊按鈕 -->
+                    <div class="ms-3 me-5 col-1" style="color:blue">
+                        David
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="container">
+            <div class="myimg mt-3">
+                <div class="img-container">
+                    <!-- <img src="./../images/qhjpage/qhjdetail.jpg"> -->
+                    <!-- 收藏icon -->
+                    <div class="icon-heart" >
+                        <i class="fa-regular fa-heart" id="hearticon" style="z-index: 1;" onclick="setFavorite()"></i>
+                    </div>
+                </div>
+            </div>
+            <!-- 購物車icon -->
+            <div class="icon-shopping icon-circle" data-toggle="modal" data-target="#orderCartModal">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+
+        </div>
+    </div>
+    <div class="container ">
+        <div class="row ">
+            <div class="col-5" id="restaurant-info">
+                <!-- 餐廳資訊 -->
+                <!-- <div class="hotpot">
+                        <div style="font-size: 30px; font-weight: bold;">無老鍋 - 公益店</div>
+                        <div class="ml-5" style="font-size: 25px; font-weight: bold;">
+                            4.8分 <span style="font-size: 20px">(33)</span>
+                        </div>
+                        <div class="ml-5 mt-2">均消200-400</div>
+                        <span class="mt-2 ">地址：台中市南屯區公益路二段74號</span>
+                        <button class="score" data-toggle="modal" data-target="#scoreModal" id="score">點我評分</button>
+                    </div> -->
+            </div>  
+            <div class="col-6 mt-3 ml-3" >
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58249.43386364922!2d120.55476344863277!3d24.151046199999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693d77ced333f7%3A0x5f6fe8df82767c!2z6Z2S6Iqx6amV6bq76L6j6Y2LIOWPsOS4reWFrOebiuW6lw!5e0!3m2!1szh-TW!2stw!4v1722836874446!5m2!1szh-TW!2stw"
+                    width="600" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <!-- 評分＆留言model -->
+        <div class="modal fade" id="scoreModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="scoreLabel">青花驕-公益店</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>x</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        
+                        <form> 
+                            <div class="form-group" >
+                                <label>評分:</label>
+                                <div class="star-rating">
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>留言</label>
+                                <input type="hidden" id="rid">
+                                <input type="text" id="commentInput" class="form-control" style="padding: 30px 30;">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="enterComment">送出</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-5">
+            <div class="row ">
+                <!-- 側邊欄 -->
+                <div class="col-2 custom-ul sticky-top">
+                    <div class="mb-2 mt-3" onclick="allMenu('青花驕')">
+                        <img src="./../images/other/hot_2.png" style="width: 150px;" alt="">
+                        <li>全部餐點</li>
+                    </div>
+                    <div class="" onclick="saleMenu('青花驕')">
+                        <img src="./../images/other/limited_time_offer.png " style="width: 100px;" alt="" onclick="">
+                        <li>限時優惠</li>
+                    </div>
+                    <div class="mt-2" onclick="menu('單點 蔬菜類','青花驕')">
+                        <img src="./../images/other/vegetable_6.jpeg" style="width: 100px;" alt="">
+                        <li>蔬菜</li>
+                    </div>
+                    <div class="mt-2" onclick="menu('單點 餃類','青花驕')">
+                        <img src="./../images/other/dumpling.png"
+                            style="width: 100px; border: none ;background-color: transparent;" alt="">
+                        <li>餃類</li>
+                    </div>
+                    <div class="mt-2" onclick="menu('單點 丸子類','青花驕')">
+                        <img src="./../images/other/porkball_1.jpg " style="width: 100px;" alt="">
+                        <li>丸子</li>
+                    </div>
+                    <div class="mt-2 mb-5" onclick="menu('單點 主食','青花驕')">
+                        <img src="./../images/other/rice.png " style="width: 80px;" alt="">
+                        <li>主食</li>
+                    </div>
+                </div>
+                <!-- 餐點 -->
+                <div class="col-9 mb-5 ml-5">
+
+                    <div id="title">
+                        <div class="ml-3 mb-4" style="font-size: 30px; font-weight: bold;">全部餐點</div>
+                    </div>
+                    <div class="row" id="menu-container">
+                        <!-- <div class=" col-4 mb-4" >
+                                <img class="ml-3 myimg" src="./../images/qhjpage/person/1.avif" alt="" >
+                                <div class="name">個人即享鍋</div>
+                                <div class="d-flex money">
+                                    <div class="fs-20 ">$</div>
+                                    <div style="text-decoration: line-through;" class="price" id="price-1">310</div>
+                                </div>
+                                <div class="d-flex money">
+                                    <div class="fs-20 ">$</div>
+                                    <div class="price" id="price-1">310</div>
+                                </div>
+                                <button class="score ml-5" data-toggle="modal" data-target="#cartModal">加入購物車</button>
+                            </div>     -->
+                        <!-- <div class=" col-4 mb-4">
+                                <img class="ml-3 myimg" src="./../images/qhjpage/person/2.avif" alt="" >   
+                                <div class="name">麻辣粉條鍋</div>
+                                <div class="d-flex money">
+                                    <div class="fs-20 ">$</div>
+                                    <div class="price" id="price-2">289</div>
+                                </div>
+                                <button class="score ml-5" data-toggle="modal" data-target="#cartModal" >加入購物車</button>
+                            </div>
+                            <div class=" col-4 mb-4">
+                                <img class="ml-3 myimg" src="./../images/qhjpage/person/3.avif" alt="" >   
+                                <div class="name ">青花驕麻辣燙</div>
+                                <div class="d-flex money">
+                                    <div class="fs-20 ">$</div>
+                                    <div class="price" id="price-3">180</div>
+                                </div>
+                                <button class="score ml-5" data-toggle="modal" data-target="#cartModal">加入購物車</button>
+                            </div> -->
+
+                    </div>
+                    <!-- <div class="ml-3 mb-4" style="font-size: 30px; font-weight: bold;">限時優惠</div>
+                        <div class="row" id="menu-container">       
+                            <div class=" col-4 mb-4 position-relative" >
+                                <img class="ml-3 myimg" src="./../images/qhjpage/meat/1.avif" alt="" > 
+                                <span class="countDown">倒數<span>1</span>hr</span>  
+                                <div class="name">美國安格斯牛小排 (200g)</div>
+                                <div class="d-flex money">
+                                    <div class="fs-20 ">$</div>
+                                    <div class="price" id="price-4">550</div>
+                                </div>
+                                
+                                <button class="score ml-5" data-toggle="modal" data-target="#cartModal">加入購物車</button>
+                            </div>
+                            
+                        
+                        </div> -->
+                    <!-- <div class="ml-3 mb-4" style="font-size: 30px; font-weight: bold;">餃類</div> -->
+                    <div class="row" id="menu-container">
+                        <!-- <div class=" col-4 mb-4">
+                                <img class="ml-3 myimg" src="./../images/qhjpage/dumpling/1.avif" alt="" >   
+                                <div class="name">水晶餃 (8個)</div>
+                                <div class="d-flex money">
+                                    <div class="fs-20 ">$</div>
+                                    <div class="price" id="price-6">90</div>
+                                </div>
+                                <button class="score ml-5" data-toggle="modal" data-target="#cartModal">加入購物車</button>
+                            </div>
+                            <div class=" col-4 mb-4">
+                                <img class="ml-3 myimg" src="./../images/qhjpage/dumpling/3.avif" alt="" >
+                                <div class="name">香菇肉蛋餃 (5個)</div>
+                                <div class="d-flex money">
+                                    <div class="fs-20 ">$</div>
+                                    <div class="price" id="price-7">160</div>
+                                </div>
+                                <button class="score ml-5" data-toggle="modal" data-target="#cartModal">加入購物車</button>
+                            </div> -->
+
+                    </div>
+                    <!-- 留言區 -->
+                    <div class="ml-3 mb-4" style="font-size: 30px; font-weight: bold;">大家怎麼說</div>
+                    <div id="inputcomment">
+                        <!-- <div class="row" >
+                            <div class="col-3 d-flex" >
+                              <img class="ml-2" src="./../images/other/David.png" style="width: 150px;">
+                              <div>David</div>
+                            </div>
+                            <div class="col-9 position-relative">
+                              <div id="userComment">
+                              </div>
+                              <p class="position-absolute date p-0">2024/5/1</p>
+                            </div>
+                            
+                            </div>
+                            <hr> -->
+                    </div>
+
+
+                    <!-- <div class="row">
+                            <div class="col-3">
+                            <img class="ml-2" src="./../images/root/LOGO.jpg" style="width: 150px;">
+                            </div>
+                            <div class="col-9 position-relative">
+                                <div>
+                                </div>
+                                <div class="date">2024/6/1</div>
+                            </div>
+                        </div> -->
+
+                    <!-- <div class="row hidden"  id="hidden-Comment" style="display: none;">
+                            <div class="col-3">
+                            <img class="ml-2" src="./../images/root/LOGO.jpg" style="width: 150px;">
+                            </div>
+                            <div class="col-9">
+                                <div>
+                                    第二次來用餐，3種部位的牛肉品質都不錯，且份量足，吃得很開心。海鮮的部分生蠔與干貝已說明不可生食，烹煮後相當甘甜嫩滑，也很好吃，不過CP值略低。每人有收取鍋底費用，最後的打包誠意十足，可以回家後繼續享用。整體而言是值得再訪的餐廳。
+                                </div>
+                                <div class="date" style="margin-top: 60px;">2024/8/1</div>
+                            </div>
+                        </div> -->
+                    <button class="score" style="margin-left: auto; margin-top: 10px;"
+                        onclick="showMore('hidden-Comment')">顯示更多</button>
+
+                    <!-- 購物車model -->
+                    <div id="">
+
+                    </div>
+                    <div class="modal fade slide-in-right" id="cartModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="cartLabel">青花驕-公益店</h5>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span>x</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <div class="lan-papapapa">
+                                        <!-- <div class="row" style="text-align: center;">
+                                            <div>
+                                                <img src="./../images/qhjpage/person/1.avif" class="product-img">
+                                            </div>
+                                            <div class="product-details ml-3">
+                                                <div class="items mt-3">個人即享鍋</div>
+                                                <div class="d-flex mt-4 ml-4">
+                                                    <span>$</span>
+                                                    <span class="prices" id="price-1">310</span>
+                                                </div>
+                                            </div>
+                                            <div class="product-actions">
+                                                <div class="ml-5 mt-3">
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-outline-secondary rounded-button"
+                                                        onclick="decrement('number-span-1', 'price-1', 'total-price-1')">-</button>
+                                                    <span class="number-span fs-20" id="number-span-1">0</span>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-outline-secondary rounded-button"
+                                                        onclick="increment('number-span-1', 'price-1', 'total-price-1')">+</button>
+                                                    <div id="total-price-1" class="mt-3 ml-1">$0</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-center ml-5">
+                                                <button class="btn btn-link trash"
+                                                    onclick="removeProduct('product-row-1')"><i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">加入購物車</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 加入訂單購物車modal -->
+                    <div class="modal fade slide-in-right" id="orderCartModal">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="cartLabel">青花驕-公益店</h5>
+                                    <button type="button" class="close" data-dismiss="modal">
+                                        <span>x</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body d-flex">
+                                    <div id="addOrderCart">
+                                        <!-- <div class="row" style="text-align: center;">
+                                            <div>
+                                                <img src="./../images/qhjpage/person/1.avif" class="product-img">
+                                            </div>
+                                            <div class="product-details ml-3">
+                                                <div class="items mt-3">個人即享鍋</div>
+                                                <div class="d-flex mt-4 ml-4">
+                                                    <span>$</span>
+                                                    <span class="prices" id="price-1">310</span>
+                                                </div>
+                                            </div>
+                                            <div class="product-actions">
+                                                <div class="ml-5 mt-3">
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-outline-secondary rounded-button"
+                                                        onclick="decrement('number-span-1', 'price-1', 'total-price-1')">-</button>
+                                                    <span class="number-span fs-20" id="number-span-1">0</span>
+                                                    <button type="button"
+                                                        class="btn btn-sm btn-outline-secondary rounded-button"
+                                                        onclick="increment('number-span-1', 'price-1', 'total-price-1')">+</button>
+                                                    <div id="total-price-1" class="mt-3 ml-1">$0</div>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-center ml-5">
+                                                <button class="btn btn-link trash"
+                                                    onclick="removeProduct('product-row-1')"><i
+                                                        class="fas fa-trash-alt"></i></button>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-primary">送出訂單</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- top -->
+        <img src="./../images/other/top.png" class="top" id="top">
+    </div>
+    <footer>
+        <footer class="myFooter mt-3">
+            <!-- 左右二欄 -->
+            <div class="row justify-content-center mt-3 container">
+                <!-- 左邊logo -->
+                <div class="col-4 text-center"></div>
+                <div class="col-2 d-flex flex-column align-items-center">
+                    <img src="../images/root/logo.jpg" class="logo mb-4" alt="">
+                    <div class="rights text-nowrap">© 版權聲明</div>
+                </div>
+    
+    
+                <!-- 右邊三列 -->
+                <div class="col-2">
+                    <div class="">
+                        <a class="btn btnFooter text-nowrap mb-2">找餐廳</a>
+                    </div>
+                    <div class="">
+                        <a class="btn btnFooter text-nowrap mb-2">看食記</a>
+                    </div>
+                    <div class="row justify-content-center mt-2 mb-3">
+                        <!-- 二個 icon -->
+                        <a href="#" class="col-6 text-center">
+                            <i class="fa-brands fa-facebook"></i>  <!-- facebook -->
+                        </a>
+                        <a href="#" class="col-6 text-center">
+                            <i class="fa-brands fa-instagram"></i> <!-- instagram -->
+                        </a>
+                    </div>
+                </div>
+                <div class="col-4 text-center"></div>
+            </div>
+        </footer>
+    
+    
+    </footer>
+
+
+
+
+    <script src="./../js/detail.js"></script>
+    <script src="./../js/jquery-3.7.1.js"></script>
+    <script src="./../js/footer.js"></script>
+    <!-- <script src="./../js/nav.js"></script> -->
+
+</body>
+
+</html>

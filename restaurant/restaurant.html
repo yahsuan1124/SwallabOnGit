@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>餐廳首頁</title>
+    <link rel="stylesheet" href="./../css/bootstrap.css">
+    <link rel="stylesheet" href="./../css/restaurantxi.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <nav class="navbar navbar-expand sticky-top shadow">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand ms-5" href="../headpage/headpage.html">
+                <img src="../images/root/LOGO.jpg" alt="" class="logo d-inline-block align-text-top">
+            </a>
+            <!-- 伸縮 -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="nav ms-0 me-5 row">
+                    <div class="nav-item col-6">
+                        <!-- 首頁沒有 active -->
+                        <!-- <a class="nav-link active" aria-current="page" href="#">Active</a> -->
+                        <a class="nav-link d-block nav_mainbtn" href="../restaurant/detail.html">找餐廳</a>
+                    </div>
+                    <div class="nav-item col-6">
+                        <a class="nav-link d-block nav_mainbtn" href="../foodNotes/foodNotes.html">看食記</a>
+                    </div>
+                </div>
+                <!-- Input 都在這 -->
+                <form class="ms-0 me-5 w-100" role="search" name="search">
+                    <div class="d-flex container">
+                        <!-- hover、click 換 icon -> src="./img/blog.png" -->
+                        <div class="theicon mt-2">
+                            <!-- <img src="./img/restaurant.png" class="icon" alt=""> -->
+                            <div id="popup" class="popup position-relative">
+                                <div id="popupBlog" class="popupBlog"></div>
+                                <div id="popupRest" class="popupRest">123</div>
+                            </div>
+                        </div>
+
+                        <!-- 搜尋框 + 情境按鈕(pill 會改成底線) -->
+                        <div class="d-block container position-relative m-0 p-0">
+                            <!-- 搜尋框 start -->
+                            <!-- <input class="form-control m-0" type="search" placeholder="Click" aria-label="Search"> -->
+                            <div style="display: flex;" clas="container row">
+                                <div class="col-6">
+                                    <input type="text" id="myInput" onclick="myFunction()" placeholder="點擊我"
+                                        class="form-control m-0">
+                                    <!-- from 資料庫 -->
+                                    <div id="myDropdown" class="dropdown-content"
+                                        style="display: none; position: absolute;">
+                                        <a href="#cate_no" onclick="fillInput('null')"
+                                            class="position-relative">不挑分類</a>
+                                        <a href="#cate_hotpot" onclick="fillInput('火鍋')"
+                                            class="position-relative">火鍋</a>
+                                        <a href="#cate_bbq" onclick="fillInput('燒肉')" class="position-relative">燒肉</a>
+                                        <a href="#cate_izakaya" onclick="fillInput('居酒屋')"
+                                            class="position-relative">居酒屋</a>
+                                        <a href="#cate_ramen" onclick="fillInput('拉麵')" class="position-relative">拉麵</a>
+                                        <a href="#cate_dessert" onclick="fillInput('甜點')"
+                                            class="position-relative">甜點</a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+
+                                    <input type="text" id="myInput2" onclick="myFunction2()" placeholder="點擊我"
+                                        class="form-control m-0 col-6">
+                                    <!-- from 資料庫 -->
+                                    <div id="myDropdown2" class="dropdown-content"
+                                        style="display: none; position: absolute;">
+                                        <a href="#loc_no" onclick="fillInput2('null')"
+                                            class="position-relative">不挑地區</a>
+                                        <a href="#loc_Taichung" onclick="fillInput2('台中市')"
+                                            class="position-relative">台中市</a>
+                                        <a href="#loc_1" onclick="fillInput2('選項2')" class="position-relative">選項2</a>
+                                        <a href="#loc_2" onclick="fillInput2('選項3')" class="position-relative">選項3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!-- 搜尋框 end -->
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 10%;">
+                                <img class="icon" src="../images/nav_icon/dating.png" alt="">約會
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 30%;">
+                                <img class="icon" src="../images/nav_icon/group.png" alt="">聚餐
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 50%;">
+                                <img class="icon" src="../images/nav_icon/confetti.png" alt="">慶生
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 70%;">
+                                <img class="icon" src="../images/nav_icon/handshake.png" alt="">商務
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 90%;">
+                                <img class="icon" src="../images/nav_icon/disabled-people.png" alt="">無障礙
+                            </button>
+                        </div>
+                        <!-- 搜尋 icon = submit -->
+                        <input type="image" src="../images/nav_icon/loupe.png" class="icon mt-2 ms-0"
+                            onclick="document.search.submit()">
+                        <!-- <img src="./img/loupe.png" class="icon mt-2 ms-1" alt="" type="submit"> -->
+                    </div>
+                </form>
+                <!-- 登入及註冊按鈕 -->
+                <div class="ms-3 me-5 col-1" style="color:blue">
+                    David
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- 限時優惠 -->
+     <div class="container-md">
+        <h4 class="mt-5">限時優惠</h4>
+        <div class="d-flex mt-3" id="sale-container">
+        <div>
+
+        </div>
+
+            <div class="card position-relative">
+                <div class="card-body">ˇ
+                    <img src="" alt="" class="img-fluid">
+                </div>
+                <span class="countDown">倒數<span>1</span>hr</span>
+                <div class="card-footer">
+                    <div>牛庵</div>
+                    <div>拉麵</div>
+                    <div></div>
+                </div>
+            </div>
+
+        </div>
+     </div>
+
+    <!-- 側邊欄+店家3*4 -->
+    <div class="container-md mt-5" style="z-index: 1";>
+        <div class="row align-items-start justify-content-center" >
+            <!-- 側邊欄 -->
+            <div class="col-3 custom-ul sticky-top">
+                <div class="mb-2 mt-3" onclick="restaurantInfo('最高評分');sale('最高評分')">
+                    <img src="./../images/other/hot.png" alt="">
+                    <li>最高評分</li>
+                </div>
+                <div class="mb-2" onclick="restaurantInfo('火鍋');sale('火鍋')" >
+                    <img src="./../images/other/hotpot.png" alt="">
+                    <li>火鍋</li>
+                </div>
+                <div class="mb-2" onclick="restaurantInfo('燒肉');sale('燒肉')">
+                    <img src="./../images/other/barbecue.png" alt="">
+                    <li>燒肉</li>
+                </div>
+                <div class="mb-2" onclick="restaurantInfo('拉麵');sale('拉麵')"> 
+                    <img src="./../images/other/ramen.png" alt="">
+                    <li>拉麵</li>
+                </div>
+                <div class="mb-2" onclick="restaurantInfo('居酒屋');sale('居酒屋')">
+                    <img src="./../images/other/izakaya.png" alt="">
+                    <li>居酒屋</li>
+                </div>
+                <div class="mb-2" onclick="restaurantInfo('甜點');sale('甜點')">
+                    <img src="./../images/other/dessert.png" alt="">
+                    <li>甜點</li>
+                </div>               
+            </div>
+            <!-- 店家3*4 -->
+            <div class="col-9 mb-5">
+                <div class="row" id="restaurant-cards-container">
+                    <!-- 資料從js動態產生 -->
+                    <!-- <div class="col-4 mb-4">
+                        <div class="card overflow-hidden">
+                            <div class="card-body">
+                                <img src="data:image/jpeg;base64,${item.restaurant_image}" alt="" class="img-fluid">
+                            </div>
+                            <div class="card-footer">
+                                <div>
+                                    <p>${item.restaurant_name}</p>
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>{item.rating}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOP按鈕 -->
+     <img src="./../images/other/top.png" alt="" class="top" id="top">
+
+    <footer>
+        <div class="container-md">
+            <div class="row">
+                <div class="col-6">
+                    <img src="" style="border-radius: 50%; width:15%" class="m-2 ">
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="./../js/bootstrap.bundle.js"></script>
+    <script src="./../js/jquery-3.7.1.js"></script>
+    <script src="./../js/restaurant.js"></script>
+    <script src="../js/nav.js"></script>
+</body>
+</html>

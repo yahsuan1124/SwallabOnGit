@@ -1,0 +1,28 @@
+:root {
+
+    nav {
+        background-color: #EEE9D5 !important;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-image: url(../images/root/bgi.png);
+        /* background-color: #EEE9D5; */
+    }
+
+    footer {
+        flex-shrink: 0;
+        /* width: 100vw !important; */
+        /* background-color: #d1bfa8 */
+        background-color:#7A8A9E
+        /* background-color:#bed8f8 */
+    }
+
+    .logo {
+        height: 5em;
+        width: auto;
+        border-radius: 50%;
+    }
+}
