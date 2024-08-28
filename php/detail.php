@@ -58,27 +58,27 @@ function favorite($alreadyAdd, $m_id, $r_id)
 {
     global $db;
     if ($alreadyAdd == 0) {
-        // 執行刪除操作
-        $sql = "DELETE FROM `restfavorites` WHERE m_id =? and r_id =?";
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(1, $m_id, PDO::PARAM_INT);
-        $stmt->bindParam(2, $r_id, PDO::PARAM_INT);
-        $stmt->execute();
+            // 執行刪除操作
+            $sql = "DELETE FROM `restfavorites` WHERE m_id =? and r_id =?";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(1, $m_id, PDO::PARAM_INT);
+            $stmt->bindParam(2, $r_id, PDO::PARAM_INT);
+            $stmt->execute();
 
-        // 返回操作結果
-        header('Content-Type: application/json');
-        echo json_encode(["status" => "deleted"]);
+            // 返回操作結果
+            header('Content-Type: application/json');
+            echo json_encode(["status" => "deleted"]);
     } else {
-        // 執行插入操作
-        $sql = "INSERT INTO `restfavorites`(`id`, `m_id`, `r_id`) VALUES (DEFAULT,?,?)";
-        $stmt = $db->prepare($sql);
-        $stmt->bindParam(1, $m_id, PDO::PARAM_INT);
-        $stmt->bindParam(2, $r_id, PDO::PARAM_INT);
-        $stmt->execute();
+            // 執行插入操作
+            $sql = "INSERT INTO `restfavorites`(`id`, `m_id`, `r_id`) VALUES (DEFAULT,?,?)";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(1, $m_id, PDO::PARAM_INT);
+            $stmt->bindParam(2, $r_id, PDO::PARAM_INT);
+            $stmt->execute();
 
-        // 返回操作結果
-        header('Content-Type: application/json');
-        echo json_encode(["status" => "added"]);
+            // 返回操作結果
+            header('Content-Type: application/json');
+            echo json_encode(["status" => "added"]);
     }
 }
 
@@ -157,8 +157,7 @@ function saveComment($userid, $restaurantid, $star, $comment)
     }
 }
 
-function timeAgo($timestamp)
-{
+function timeAgo($timestamp) {
     $time = time() - strtotime($timestamp);
 
     if ($time < 60) {
@@ -305,13 +304,12 @@ function showComment($r_id)
         header('Content-Type: application/json');
         echo json_encode(["error" => "資料庫錯誤"]);
     }
-
+    
 }
 //顯示星星
-function star($r_id)
-{
+function star($r_id){
     global $db;
-    try {
+        try {
         // 建立資料庫連線
         $sql = "SELECT * from users left join members on users.id = members.user_id LEFT JOIN memberreviews on members.id = memberreviews.m_id where memberreviews.r_id = ? order by memberreviews.created_at_date desc";
         $stmt = $db->prepare($sql);

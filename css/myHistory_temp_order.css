@@ -1,0 +1,42 @@
+        /* 顯示紀錄 */
+        .myRecordsTemp {
+            /* border: 2px solid gray; */
+            /* border-radius: 10%; */
+            background-color: white;
+            box-shadow: 3px 3px 3px #aaa;
+            margin: 5%;
+            padding: 2%;
+            height: fit-content;
+        }
+
+        .myRecordsContainer {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+        .myRecordsContainer img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .myRecordsTitle {}
+
+        .myRecordsInfo {
+            display: flex;
+            float: left;
+            font-size: smaller;
+            text-wrap: nowrap;
+        }
+
+        .myRecordsInfo span,
+        .myRecordsInfo a {
+            display: inline-flex;
+            float: left;
+        }
+
+        .myRecordsBtn button {
+            font-size: smaller;
+            text-wrap: nowrap;
+        }

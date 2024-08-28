@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$dbname = "demo";
+$dbname = "swallab";
 $user = "root";
 $password = "";
 
@@ -8,10 +8,10 @@ $password = "";
 
 try {
     // 連接資料庫
-    $db = new PDO("mysql:host=$host;dbname=$dbname", $user, $password);
+    $db = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $user, $password);
 
     // 從資料庫中獲取資料
-    $sql = 'select * from foodnotes where type ="bbq" order by viewNumber desc limit 12';
+    $sql = 'select title,main_photo,count from membernotes left join restinfos on membernotes.r_id=restinfos.id left join filtclasses on filtclasses.id=restinfos.f_c_id where filtclasses.id=2 order by membernotes.count desc limit 12;';
     $stmt = $db->query($sql, PDO::FETCH_ASSOC);
     $rows = $stmt->fetchAll();
 
@@ -20,22 +20,22 @@ try {
 
     foreach ($rows as $row) {
         $comment = htmlspecialchars($row['title']); 
-        $viewNumber = htmlspecialchars($row['viewNumber']); 
+        $viewNumber = htmlspecialchars($row['count']); 
         $photoBlob = $row['main_photo'];
 
-        // 自動判斷照片格式型態
-        $photoMimeType = (new finfo(FILEINFO_MIME_TYPE))->buffer($photoBlob);
-        // 轉base64
-        $photoBase64 = base64_encode($photoBlob);
+        // // 自動判斷照片格式型態
+        // $photoMimeType = (new finfo(FILEINFO_MIME_TYPE))->buffer($photoBlob);
+        // // 轉base64
+        // $photoBase64 = base64_encode($photoBlob);
 
-        // IMG的src
-        $photoSrc = "data:{$photoMimeType};base64,{$photoBase64}";
+        // // IMG的src
+        // $photoSrc = "data:{$photoMimeType};base64,{$photoBase64}";
 
         echo <<<HTML
         <div class="col-4 mb-4">
           <div class="card overflow-hidden">
             <div class="card-body p-0">
-              <img src="{$photoSrc}" alt="" class="img-fluid notesImage" />
+              <img src="{$photoBlob}" alt="" class="img-fluid notesImage" />
             </div>
             <div class="card-footer align-items-center">
               <p class="ellipsis notesTitle">{$comment}</p>

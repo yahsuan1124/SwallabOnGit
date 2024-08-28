@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文章</title>
+    <link rel="stylesheet" href="../css/demoHotpot.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link href="../css/root.css" rel="stylesheet">
+    <link href="../css/footer.css" rel="stylesheet">
+    <link href="../css/nav.css" rel="stylesheet">
+    <script scr="../js/nav.js"></script>
+    <script scr="../js/footer.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- NAV_begin : sticky-top -->
+    <nav class="navbar navbar-expand sticky-top shadow">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand ms-5 col-1" href="../headpage/headpage.html">
+                <img src="../images/root/logo.jpg" alt="" class="logo d-inline-block align-text-top">
+            </a>
+            <!-- 伸縮 -->
+            <div class="collapse navbar-collapse col-10" id="navbarSupportedContent">
+                <div class="nav ms-0 me-3 row">
+                    <div class="nav-item col-6">
+                        <!-- 首頁沒有 active -->
+                        <!-- <a class="nav-link active" aria-current="page" href="#">Active</a> -->
+                        <a class="nav-link d-block nav_mainbtn" href="http://localhost/SwallabOnGit/restaurant/restaurant.html">找餐廳</a>
+                    </div>
+                    <div class="nav-item col-6">
+                        <a class="nav-link d-block nav_mainbtn" href="http://localhost/SwallabOnGit/foodNotes/foodNotes.html">看食記</a>
+                    </div>
+                </div>
+                <!-- Input 都在這 -->
+                <form class="ms-2 me-1 w-100" role="search" name="search">
+                    <div class="d-flex" style="width: 100%;">
+                        <!-- hover、click 換 icon -> src="./img/blog.png" -->
+                        <div id="theicon" class="theicon mt-2 me-0 align-items-center justify-content-center">
+                            <div id="popup"
+                                class="popup row text-center d-flex align-items-center justify-content-center">
+                                <p><i id="showicon" class=""></i></p>
+                            </div>
+                            <div id="popupBR" class="popupBR">
+                                <div id="popupBlog" class="col-6 text-center">
+                                    <p class="text-center"><i class="fa-solid fa-book-open"></i></p>
+                                </div>
+                                <div id="popupRest" class="col-6 text-center">
+                                    <p><i class="fa-solid fa-utensils"></i></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- 搜尋框 + 情境按鈕(pill 會改成底線) -->
+                        <div class="d-block position-relative m-0 p-0 col">
+                            <!-- 搜尋框 start -->
+                            <!-- <input class="form-control m-0" type="search" placeholder="Click" aria-label="Search"> -->
+                            <div style="display: flex;" clas="row">
+                                <div class="col-6">
+                                    <input type="text" id="myInput" onclick="myFunction()" placeholder="點擊我"
+                                        class="form-control m-0">
+                                    <!-- from 資料庫 -->
+                                    <div id="myDropdown" class="dropdown-content"
+                                        style="display: none; position: absolute;">
+                                        <a href="#cate_no" onclick="fillInput('null')"
+                                            class="position-relative">不挑分類</a>
+                                        <a href="#cate_hotpot" onclick="fillInput('火鍋')"
+                                            class="position-relative">火鍋</a>
+                                        <a href="#cate_bbq" onclick="fillInput('燒肉')" class="position-relative">燒肉</a>
+                                        <a href="#cate_izakaya" onclick="fillInput('居酒屋')"
+                                            class="position-relative">居酒屋</a>
+                                        <a href="#cate_ramen" onclick="fillInput('拉麵')" class="position-relative">拉麵</a>
+                                        <a href="#cate_dessert" onclick="fillInput('甜點')"
+                                            class="position-relative">甜點</a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+
+                                    <input type="text" id="myInput2" onclick="myFunction2()" placeholder="點擊我"
+                                        class="form-control m-0 col-6">
+                                    <!-- from 資料庫 -->
+                                    <div id="myDropdown2" class="dropdown-content"
+                                        style="display: none; position: absolute;">
+                                        <a href="#loc_no" onclick="fillInput2('null')"
+                                            class="position-relative">不挑地區</a>
+                                        <a href="#loc_Taichung" onclick="fillInput2('台中市')"
+                                            class="position-relative">台中市</a>
+                                        <a href="#loc_1" onclick="fillInput2('選項2')" class="position-relative">選項2</a>
+                                        <a href="#loc_2" onclick="fillInput2('選項3')" class="position-relative">選項3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!-- 搜尋框 end -->
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 10%;">
+                                <img class="icon" src="../images/nav_icon/dating.png" alt="">約會
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 30%;">
+                                <img class="icon" src="../images/nav_icon/group.png" alt="">聚餐
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 50%;">
+                                <img class="icon" src="../images/nav_icon/confetti.png" alt="">慶生
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 70%;">
+                                <img class="icon" src="../images/nav_icon/handshake.png" alt="">商務
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 90%;">
+                                <img class="icon" src="../images/nav_icon/disabled-people.png" alt="">無障礙
+                            </button>
+                        </div>
+                        <!-- 搜尋 icon = submit -->
+                        <input type="image" src="../images/nav_icon/loupe.png" class="icon mt-2 ms-0"
+                            onclick="document.search.submit()">
+                        <!-- <img src="./img/loupe.png" class="icon mt-2 ms-1" alt="" type="submit"> -->
+                    </div>
+                </form>
+                <!-- 登入及註冊按鈕 -->
+                <div class="ms-3 me-5 col-1">
+                    <a href="#" class="">
+                        <button class="btn btn-sm btnLogin text-nowrap">登入/註冊</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV_end -->
+
+
+    
+   <div class="container p-0 " >
+        <div class="row d-flex justify-content-center p-2 m-0 mt-5 mb-4">
+            <!-- 左邊麵包屑+博主照片 -->
+            <div class="col-3 p-3 " >
+                <ul class="p-0 m-0 bread" >
+                    <li class="m-0">首頁</li>
+                    <li class="m-0">食記</li>
+                    <li class="m-0">火鍋</li>
+                </ul>
+                <!-- 博主頭貼+名字 -->
+                <div class="card author">
+                    <a href="./author.html">
+                        <div class="card-body p-0" >
+                            <img id="memberPhoto" src="../images/other/winnie.webp" alt="" class="img-fluid">
+                        </div>
+                    </a>
+                    <div id="memberName" class="card-footer d-flex align-items-center justify-content-center" >
+                        小熊維尼
+                    </div>
+                </div>
+                
+                
+            </div>
+
+            <!-- 右邊文章 -->
+            <div class="col-9  p-3" >
+                <h3 id="title">【台中】青花驕麻辣鍋(崇德店)王品集團麻辣鍋、酸菜白肉鍋火鍋餐廳 牛三拼盛宴比臉大氣勢十足</h3>
+                <div class="mt-5" >發布時間：<span id="createdTime">2024-07-20</span></div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div>用餐時間：<span id="visitedTime">2024-06-30</span></div>
+                    <!-- 下面這個<div>不可以刪掉 -->
+                    <div>
+                        <i class="fa-regular fa-heart noColorHeart"></i>
+                        <i class="fa-solid fa-heart colorHeart" id="heart"></i>
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-facebook" ></i>
+                    </div>
+                </div>
+                <!-- 內文 -->
+                <article class="mt-4 bigArticle" >
+                    <div id="content"></div>
+                    <article>
+                        <h5 id="restName"></h5>
+                        <p>均消：<span id="per_cost"></span></p>
+                        <p>電話：<span id="phone"></span></p>
+                        <p>地址：<span id="address"></span></p>
+                        <p>營業時間：<span id="wd_operating"></span><br>
+                        <span>&emsp;&emsp;&emsp;&emsp;&emsp;</span><span id="we_operating"></span></p>
+                    </article>
+                </article>
+            </div>
+
+            <hr style="border: 2px solid black; width:80%">
+
+            <!-- 留言區 -->
+            <div class="p-4" >
+                <div class="d-flex justify-content-between align-items-center commentTitle" >
+                    <h3 class="m-0">評論區</h3>
+                    <i class="fa-solid fa-pen-to-square"data-bs-toggle="modal" data-bs-target="#myModal"></i>
+                </div>
+                <!-- 留言的Modal -->
+                <!-- The Modal -->
+                <div class="modal fade" id="myModal" data-bs-backdrop="static">
+                    <div class="modal-dialog" >
+                        <div class="modal-content modal-bg" >
+                            <!-- Modal Header -->
+                            <div class="modal-header" >
+                                <div>
+                                    <h4 class="modal-title" >我要留言</h4>
+                                </div>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+
+                            <!-- Modal body -->
+                            <div class="modal-body p-4">
+                                <form>
+                                    <label for="message">留言：</label>
+                                    <textarea id="message" name="message" rows="5"></textarea>
+                                </form>
+                            </div>
+
+                            <!-- Modal footer -->
+                            <div class="modal-footer d-flex justify-content-center align-items-center">
+                                <button type="submit" class="btn login" data-bs-dismiss="modal">送出</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+       
+    </div>
+
+    <!-- TOP按鈕 -->
+    <img src="../images/other/top.png" alt="" class="top" id="top">
+
+    <!-- Footer_begin -->
+    <footer class="myFooter mt-3">
+        <!-- 左右二欄 -->
+        <div class="row justify-content-center mt-3 container">
+            <!-- 左邊logo -->
+            <div class="col-4 text-center"></div>
+            <div class="col-2 justify-content-center">
+                <img src="../images/root/logo.jpg" class="logo" alt="">
+                <div class="text-center">
+                    <span class="rights text-nowrap">© 版權聲明</span>
+                </div>
+            </div>
+            <!-- 右邊三列 -->
+            <div class="col-2">
+                <div class="">
+                    <a class="btn btnFooter text-nowrap">找餐廳</a>
+                </div>
+                <div class="">
+                    <a class="btn btnFooter text-nowrap">看食記</a>
+                </div>
+                <div class="row justify-content-center">
+                    <!-- 二個 icon -->
+                    <a href="#" class="col-6 text-center">
+                        <i class="fa-brands fa-facebook"></i>  <!-- facebook -->
+                    </a>
+                    <a href="#" class="col-6 text-center">
+                        <i class="fa-brands fa-instagram"></i> <!-- instagram -->
+                    </a>
+                </div>
+            </div>
+            <div class="col-4 text-center"></div>
+        </div>
+    </footer>
+    <!-- Footer_end -->
+
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script src="../js/demoHotpot.js"></script>
+    <script src="../js/NewDemoHotpot.js"></script>
+</body>
+</html>

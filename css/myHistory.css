@@ -1,0 +1,143 @@
+.breadcrumb {
+    list-style: none;
+    overflow: hidden;
+    font: 15px Helvetica, Arial, sans-serif;
+}
+
+.breadcrumb a {
+    color: #666;
+    text-decoration: none;
+    padding: 10px 0 10px 55px;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.breadcrumb span {
+    color: #666;
+    text-decoration: none;
+    padding: 10px 0 10px 20px;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.breadcrumb a.active,
+.breadcrumb a:hover {
+    color: #5d5d5d;
+    text-decoration: underline;
+}
+
+.rightpart{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    /* flex-wrap: wrap; */
+    margin-top: calc(-1* var(--bs-gutter-y));
+    margin-right: calc(-.5* var(--bs-gutter-x));
+    margin-left: calc(-.5* var(--bs-gutter-x));
+}
+
+.sidebar {
+    height: 300px;
+    margin: 15% 30px 0 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #aaa;
+    position: sticky;
+    top: 200px;
+}
+
+.sidebar a{
+    text-decoration: none;
+    color: #000;
+}
+
+.sidebar a p {
+    border: 2px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.sidebar .active>p:nth-child(1) {
+    background-color: #e5a67a;
+    color: #fff;
+}
+
+.sidebar a p:hover {
+    background-color: #e5a67a;
+    color: #fff;
+}
+
+/* member-activity-styles.css */
+
+.member-activity-container {
+    padding: 20px;
+}
+
+.tab-button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+}
+
+.tab-button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.activity-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.activity-image {
+    width: 100%;
+    height: auto;
+    max-width: 150px;
+}
+
+.activity-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.activity-content {
+    margin-bottom: 10px;
+}
+
+.activity-info {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.activity-buttons {
+    margin-top: 10px;
+}
+
+.activity-button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.load-more-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+}

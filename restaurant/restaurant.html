@@ -28,10 +28,10 @@
                     <div class="nav-item col-6">
                         <!-- 首頁沒有 active -->
                         <!-- <a class="nav-link active" aria-current="page" href="#">Active</a> -->
-                        <a class="nav-link d-block nav_mainbtn" href="../restaurant/detail.html">找餐廳</a>
+                        <a class="nav-link d-block nav_mainbtn" href="http://localhost/SwallabOnGit/restaurant/restaurant.html">找餐廳</a>
                     </div>
                     <div class="nav-item col-6">
-                        <a class="nav-link d-block nav_mainbtn" href="../foodNotes/foodNotes.html">看食記</a>
+                        <a class="nav-link d-block nav_mainbtn" href=http://localhost/SwallabOnGit/foodNotes/foodNotes.html">看食記</a>
                     </div>
                 </div>
                 <!-- Input 都在這 -->
@@ -204,13 +204,36 @@
     <!-- TOP按鈕 -->
      <img src="./../images/other/top.png" alt="" class="top" id="top">
 
-    <footer>
-        <div class="container-md">
-            <div class="row">
-                <div class="col-6">
-                    <img src="" style="border-radius: 50%; width:15%" class="m-2 ">
+   <footer class="myFooter mt-3">
+        <!-- 左右二欄 -->
+        <div class="row justify-content-center mt-3 container">
+            <!-- 左邊logo -->
+            <div class="col-4 text-center"></div>
+            <div class="col-2 d-flex flex-column align-items-center">
+                <img src="../images/root/logo.jpg" class="logo mb-4" alt="">
+                <div class="rights text-nowrap">© 版權聲明</div>
+            </div>
+
+
+            <!-- 右邊三列 -->
+            <div class="col-2">
+                <div class="">
+                    <a class="btn btnFooter text-nowrap mb-2">找餐廳</a>
+                </div>
+                <div class="">
+                    <a class="btn btnFooter text-nowrap mb-2">看食記</a>
+                </div>
+                <div class="row justify-content-center mt-2 mb-3">
+                    <!-- 二個 icon -->
+                    <a href="#" class="col-6 text-center">
+                        <i class="fa-brands fa-facebook"></i>  <!-- facebook -->
+                    </a>
+                    <a href="#" class="col-6 text-center">
+                        <i class="fa-brands fa-instagram"></i> <!-- instagram -->
+                    </a>
                 </div>
             </div>
+            <div class="col-4 text-center"></div>
         </div>
     </footer>
     <script src="./../js/bootstrap.bundle.js"></script>

@@ -1,0 +1,91 @@
+header{
+    background-image: none;
+    background-color: #EEE9D5;
+    }
+body{
+    background-image: url("./../image/大專bg.png");
+    background-attachment: fixed;
+}
+li{margin: 5% 0;}
+footer{background-color: #ecdea8;}
+.top{
+    position: fixed;
+    bottom: 2%;
+    right:  2%;
+    width: 3%; 
+    cursor: pointer;
+    z-index: 1;
+    }
+/* 限時優惠 */
+.position-relative{position: relative;}
+.countDown{
+    position: absolute;
+    background-color: #efa47e;
+    top: -8%;
+    right: -8%; 
+    padding: 3% 5%;
+    color:white;
+}
+.overflow-hidden{overflow: hidden;}
+.custom-ul {
+    background-color: #fff;
+    width: 15%;
+    padding: 0;
+    margin: 0 2% 0 0 ;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    list-style-type: none;
+    border-radius: 10px;
+    box-shadow: 5px 10px 15px #aaaaaa;
+    }
+.custom-ul img{
+    width:30%;
+    cursor: pointer;
+    }
+
+.card {
+    border: 1px solid #ccc;
+    margin: 1.2%;
+    width: 100%;
+    background-color: #f8f8f8;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 10px 15px #aaaaaa;
+    }
+
+.card-body{
+    padding: 0;
+    overflow: hidden;
+}
+.card-body > img {
+    transition: transform 0.3s ease;
+    }
+
+.card-body > img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    border-radius: 10px 10px 0px 0px;
+    }
+.card-footer {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    }
+    .img-fluid {
+        width: 100%;
+        height: 300px; 
+        object-fit: cover; 
+    }
+    .img-fluid1 {
+        width: 100%;
+        height: 200px; 
+        object-fit: cover; 
+    }

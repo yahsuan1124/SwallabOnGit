@@ -1,0 +1,662 @@
+body {
+    background-image: url(../images/background.webp);
+}
+
+header {
+    border-bottom: 1px solid #000;
+    text-align: center;
+    height: 100px;
+    background-color: #eee9d5;
+}
+
+#userName {
+    padding: 4px 20px;
+    margin: 0;
+    font-weight: bold;
+    color: #8B4513;
+}
+
+#myLoading {
+    text-align: center;
+}
+
+#mySmallLoading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #00000015;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingCon {
+    position: relative;
+    width: 80%;
+    max-width: 5px;
+    margin: auto;
+}
+
+.item>div {
+    background-color: #f00;
+    width: 15%;
+}
+
+.mySidebar {
+    /* border: 1px solid #000; */
+    height: 300px;
+    margin: 15% 30px 0 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #aaa;
+    position: sticky;
+    top: 200px;
+}
+
+.mySidebar>a {
+    text-decoration: none;
+    color: #000;
+}
+
+.mySidebar>a>p {
+    border: 2px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.mySidebar>.active>p:nth-child(1) {
+    background-color: #e5a67a;
+    color: #fff;
+}
+
+.mySidebar>a>p:hover {
+    background-color: #e5a67a;
+    color: #fff;
+}
+
+.options {
+    justify-content: space-around;
+    border-bottom: 1px solid #000;
+    margin: 30px;
+}
+
+.options>a {
+    text-decoration: none;
+    color: #000;
+}
+
+.options>a>h3 {
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.options a.active h3 {
+    background-color: #e5a67a;
+    font-weight: bolder;
+    color: #fff;
+}
+
+.options>a>h3:hover {
+    background-color: #e5a67a;
+    font-weight: bolder;
+    color: #fff;
+}
+
+.orderStatus {
+    display: flex;
+    justify-content: space-around;
+}
+
+.orderStatus>p {
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.orderStatus>p:hover {
+    font-weight: bolder;
+    box-shadow: 0 0 0 1px #000;
+}
+
+.optionContainer {
+    padding: 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #aaa;
+    /* border: 1px solid #000; */
+}
+
+.optionContainer h4 {
+    padding: 20px;
+}
+
+.optionContainer>.item>p {
+    padding: 20px;
+}
+
+.itemContainer {
+    text-align: center;
+}
+
+.itemContainer .col-6 {
+    font-weight: bolder;
+    padding: 10px;
+    /* border: 1px solid #000; */
+}
+
+.itemContainer .col-6:nth-child(1),
+.itemContainer .col-6:nth-child(2) {
+    font-weight: normal;
+}
+
+.itemContainer>.col {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    /* border: 1px solid #000; */
+}
+
+.myButton {
+    display: flex;
+    justify-content: end;
+
+}
+
+.myButton>p {
+    border: 1px solid #000;
+    /* color: #fff; */
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.myButton>p:nth-child(1) {
+    background-color: #e5a67a;
+    color: #fff;
+}
+
+.myButton>p:nth-child(2) {
+    order: -1;
+}
+
+.myButton>p:hover {
+    font-weight: bolder;
+    box-shadow: 0 0 0 1px #000;
+}
+
+.footer {
+    background-color: #899acf;
+    height: 100px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* ================================ */
+
+
+
+/* 營業時間 */
+
+input[type=hidden] {
+    border: 1px solid #000;
+}
+
+.editTime {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #aaa;
+    padding: 20px;
+}
+
+.selected {
+    background-color: #e5a67a;
+    font-weight: bold;
+    color: #fff;
+}
+
+.col>label {
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.col>label:hover {
+    font-weight: bolder;
+    box-shadow: 0 0 0 1px #000;
+}
+
+.weekdaysContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.weekdaysContainer .col {
+    flex: 1;
+    text-align: center;
+}
+
+.daytime {
+    text-align: center;
+}
+
+.newBtn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#addBreakTime:hover,
+#addHolidayBreakTime:hover {
+    font-weight: bolder;
+    box-shadow: 0 0 0 1px #000;
+}
+
+#addBreakTime,
+#addHolidayBreakTime {
+    border: 1px solid #000;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+.disable {
+    pointer-events: none;
+    opacity: .5;
+}
+
+.breakTimeContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.holidaysContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.holidaysContainer .col {
+    flex: 1;
+    text-align: center;
+}
+
+.mySettimeBtn {
+    /* border: 1px solid #000; */
+    margin: 30px;
+    text-align: right;
+}
+
+.settimeBtn {
+    border: 1px solid #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    background-color: #e5a67a;
+    color: #fff;
+}
+
+.settimeBtn:hover {
+    font-weight: bolder;
+    box-shadow: 0 0 0 1px #000;
+}
+
+/* ================================== */
+
+/* 菜單管理 */
+
+
+
+
+
+.menuContainer {
+    text-align: center;
+}
+
+.newDiscountBtn {
+    display: flex;
+    justify-content: space-between;
+}
+
+#addDiscount {
+    border: 1px solid #000;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+#addDiscount:hover {
+    font-weight: bolder;
+    box-shadow: 0 0 0 1px #000;
+}
+
+.fa-trash-can,
+.fa-pen {
+    font-size: 1.5em;
+    margin-right: 20px;
+}
+
+.fa-trash-can:hover,
+.fa-pen:hover {
+    transform: scale(1.1);
+}
+
+.discountBtn {
+    margin: 30px;
+    text-align: right;
+}
+
+#discountBtn,
+#addMenuBtn,
+#modifyMenuBtn {
+    border: 1px solid #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    background-color: #e5a67a;
+    color: #fff;
+}
+
+#discountBtn:hover,
+#addMenuBtn:hover,
+#modifyMenuBtn:hover {
+    font-weight: bolder;
+    box-shadow: 0 0 0 1px #000;
+}
+
+#submitResult,
+#mySubmitResult,
+#deleteResult {
+    color: #f00;
+    margin-right: 20px;
+    /* background-color: #ffffff7e; */
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+/* ================================== */
+
+/*  新增/修改菜單 */
+.menuListContainer {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #aaa;
+}
+
+.menuListContainer>.col-2 {
+    font-weight: bold;
+}
+
+.menuListContainer>.col-2,
+.myMenuList>.col-2 {
+    margin: auto;
+    /* border: 1px solid #000; */
+    text-align: center;
+}
+
+.myMenuList {
+    margin-top: 10px;
+    border-bottom: 1px solid #000;
+}
+
+.myMenuList>.col-2>img {
+    width: 100%;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.editMenuCon {
+    display: flex;
+    justify-content: space-between;
+}
+
+#editMenu {
+    border: 1px solid #000;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 30px;
+    width: 65px;
+}
+
+#editMenu:hover {
+    font-weight: bolder;
+    box-shadow: 0 0 0 1px #000;
+}
+
+
+/* 新增表單 */
+.addOptionContainerBg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #00000080;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#editForm,
+#modifyForm {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    margin: auto;
+}
+
+#deleteForm {
+    position: relative;
+    margin: auto;
+}
+
+#myClose,
+#myClose2 {
+    position: absolute;
+    top: -4%;
+    right: -2%;
+}
+
+#myClose3 {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+}
+
+.addOptionContainer {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 2000 !important;
+    position: relative;
+}
+
+.addOptionContainer>.col>input {
+    /* border: 1px solid #000; */
+    margin: auto;
+    display: flex;
+    width: 200px;
+}
+
+#photoResult,
+#myPhotoResult {
+    border: 1px solid #000;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#photoResult img,
+#myPhotoResult img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    /* width: 100%;
+    height: 100%; */
+
+}
+
+.addOptionContainer>.col>.col-12 {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    margin: 10px;
+}
+
+.addOptionContainer>.col>.col-12>input,
+.addOptionContainer>.col>.col-12>select {
+    width: 55%;
+    height: 33px;
+    margin: 0;
+}
+
+.colBtn {
+    border: 1px solid #000;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 30px;
+    cursor: pointer;
+}
+
+.colBtn:hover {
+    font-weight: bolder;
+    box-shadow: 0 0 0 1px #000;
+}
+
+/* .colBtn:nth-child(1) {
+    color: #f00;
+} */
+/* ================ */
+
+/* 編輯餐廳資訊 */
+.restaurantInfo {
+    /* border: 1px solid #000; */
+    text-align: center;
+    margin: 30px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #aaa;
+    justify-content: center;
+}
+
+#restaurantInfo {
+    margin: 40px;
+}
+
+#restaurantInfo .row .col-6 {
+    margin: auto;
+    display: flex;
+    /* justify-content: flex-end; */
+    /* text-align: center; */
+    border: 1px solid #000;
+}
+
+#restaurantInfo .row .col-6:nth-child(2) {
+    display: flex;
+    justify-content: flex-start;
+    text-align: center;
+    border: 1px solid #000;
+}
+
+#restaurantInfo label>h5 {
+    padding: 20px;
+    display: inline-block;
+}
+
+#restaurantInfo input[type=text],
+#restaurantInfo select {
+    width: 500px;
+    height: 35px;
+    text-align: center;
+}
+
+.tagsContainer {
+    width: 500px;
+    height: 35px;
+    display: inline-block;
+}
+
+.tagsContainer input[type=checkbox] {
+    display: none;
+}
+
+.tagsContainer label {
+    padding: 0 20px;
+    margin: 0 11px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.tags-select {
+    background-color: #e5a67a;
+    color: #fff;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: flex-end;
+    padding: 20px;
+    /* background-color: #e5a67a; */
+}
+
+.submit-container input[type="submit"] {
+    background-color: #e5a67a;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 50px
+}
+
+.submit-container input[type="submit"]:hover {
+    font-weight: bolder;
+    box-shadow: 0 0 0 1px #000;
+}
+
+/* =================== */
+.p-20 {
+    padding: 20px;
+}
+
+.m-20 {
+    margin: 20px;
+}
+
+.m-0 {
+    margin: 0;
+}
+
+/* .my-10{margin: 10px 0;} */
+.mt-20 {
+    margin-top: 20px;
+}
+
+.d-none {
+    display: none;
+}

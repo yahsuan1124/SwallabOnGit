@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+
+<body>
+    <div>
+        <form id="loginForm">
+            <label for="account">帳號 :</label>
+            <input name="account" id="account">
+            <br>
+            <label for="password">密碼 :</label>
+            <input name="password" id="password">
+            <br>
+            <input type="submit" value="送出">
+        </form>
+    </div>
+    <script>
+        onload = () => {
+            // 清除所以localStorage的資料
+            localStorage.clear();
+
+
+            document.getElementById('loginForm').addEventListener('submit', async event => {
+                event.preventDefault();
+                const body = new FormData(event.target);
+
+                const url = 'http://localhost/MySwallab/public/api/login';
+                let response = await fetch(url, {
+                    method: 'POST',
+                    body
+                });
+                let result = await response.json();
+                console.log(result);
+
+                if (response.ok) {
+                    // let result = await response.json();
+                    // console.log(result);
+                    
+                    if (result.token) {
+                        // console.log('result.token', result.token);
+                        localStorage.setItem('token', result.token);
+                        localStorage.setItem('user', result.user.id);
+                        localStorage.setItem('user_id', result.user_id);
+                        localStorage.setItem('role', result.user.role);
+                        // console.log('Login successful', result.user.id);
+                        window.location.href = result.url;
+                    }
+                } else {
+                    console.error('Login failed');
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

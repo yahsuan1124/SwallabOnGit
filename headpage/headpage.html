@@ -23,32 +23,50 @@
     <nav class="navbar navbar-expand sticky-top shadow">
         <div class="container">
             <!-- LOGO -->
-            <a class="navbar-brand ms-5 col-1" href="http://localhost/swallabLa/swallab/public/headpage/headpage">
-                <img src="../images/other/logo.jpg" alt=""
-                    class="logo d-inline-block align-text-top">
+            <a class="navbar-brand ms-5 col-1" href="../headpage/headpage.html">
+                <img src="../images/root/logo.jpg" alt="" class="logo d-inline-block align-text-top">
             </a>
             <!-- 伸縮 -->
             <div class="collapse navbar-collapse col-10" id="navbarSupportedContent">
                 <div class="nav ms-0 me-3 row">
                     <div class="nav-item col-6">
-                        <a id="rest" class="nav-link d-block nav_mainbtn" style="color:#8B4513;font-weight: bold;"
-                            href="http://localhost/swallabLa/swallab/public/restaurant/detail">找餐廳</a>
+                        <!-- 首頁沒有 active -->
+                        <!-- <a class="nav-link active" aria-current="page" href="#">Active</a> -->
+                        <a class="d-block nav_mainbtn nav_mainbtn_rest" href="http://localhost/SwallabOnGit/restaurant/restaurant.html">找餐廳</a>
                     </div>
                     <div class="nav-item col-6">
-                        <a id="resta" class="nav-link d-block nav_mainbtn" style="color:#8B4513;font-weight: bold;"
-                            href="http://localhost/test/foodNotes/foodNotes.html">看食記</a>
+                        <a class="d-block nav_mainbtn nav_mainbtn_note" href="http://localhost/SwallabOnGit/foodNotes/foodNotes.html">看食記</a>
                     </div>
                 </div>
                 <!-- Input 都在這 -->
                 <form class="ms-2 me-1 w-100" role="search" name="search">
                     <div class="d-flex" style="width: 100%;">
-                        <div id="theicon" class="mt-2 me-0 align-items-center justify-content-center"></div>
+                        <!-- hover、click 換 icon -> src="./img/blog.png" -->
+                        <div id="theicon" class="theicon mt-2 me-0 align-items-center justify-content-center">
+                            <div id="popup" class="popup text-center d-flex align-items-center justify-content-center">
+                                <p><i id="showicon" class=""></i></p>
+                            </div>
+                            <div id="popupBR" class="popupBR">
+                                <div id="popupBlog" class="col-4 text-center">
+                                    <p class="text-center"><i class="fa-solid fa-book-open"></i></p>
+                                </div>
+                                <div id="popupRest" class="col-4 text-center">
+                                    <p><i class="fa-solid fa-utensils"></i></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
                         <!-- 搜尋框 + 情境按鈕(pill 會改成底線) -->
                         <div class="d-block position-relative m-0 p-0 col">
-                            <div style="display: flex;" class="row">
+                            <!-- 搜尋框 start -->
+                            <!-- <input class="form-control m-0" type="search" placeholder="Click" aria-label="Search"> -->
+                            <div style="display: flex;" clas="row">
                                 <div class="col-6">
                                     <input type="text" id="myInput" onclick="myFunction()" placeholder="點擊我"
                                         class="form-control m-0">
+                                    <!-- from 資料庫 -->
                                     <div id="myDropdown" class="dropdown-content"
                                         style="display: none; position: absolute;">
                                         <a href="#cate_no" onclick="fillInput('null')"
@@ -64,8 +82,10 @@
                                     </div>
                                 </div>
                                 <div class="col-6">
+
                                     <input type="text" id="myInput2" onclick="myFunction2()" placeholder="點擊我"
-                                        class="form-control m-0">
+                                        class="form-control m-0 col-6">
+                                    <!-- from 資料庫 -->
                                     <div id="myDropdown2" class="dropdown-content"
                                         style="display: none; position: absolute;">
                                         <a href="#loc_no" onclick="fillInput2('null')"
@@ -78,37 +98,41 @@
                                 </div>
                             </div>
 
+
+
+                            <!-- 搜尋框 end -->
                             <button class="position-absolute translate-middle rounded-pill filter_btn"
                                 style="margin-left: 10%;">
-                                <img class="icon" src="../images/other/dating.png" alt="">約會
+                                <img class="icon" src="../images/nav_icon/dating.png" alt="">約會
                             </button>
                             <button class="position-absolute translate-middle rounded-pill filter_btn"
                                 style="margin-left: 30%;">
-                                <img class="icon" src="../images/other/group.png" alt="">聚餐
+                                <img class="icon" src="../images/nav_icon/group.png" alt="">聚餐
                             </button>
                             <button class="position-absolute translate-middle rounded-pill filter_btn"
                                 style="margin-left: 50%;">
-                                <img class="icon" src="../images/other//confetti.png"
-                                    alt="">慶生
+                                <img class="icon" src="../images/nav_icon/confetti.png" alt="">慶生
                             </button>
                             <button class="position-absolute translate-middle rounded-pill filter_btn"
                                 style="margin-left: 70%;">
-                                <img class="icon" src="../images/other//handshake.png"
-                                    alt="">商務
+                                <img class="icon" src="../images/nav_icon/handshake.png" alt="">商務
                             </button>
                             <button class="position-absolute translate-middle rounded-pill filter_btn"
                                 style="margin-left: 90%;">
-                                <img class="icon" src="../images/other/disabledpeople.png"
-                                    alt="">無障礙
+                                <img class="icon" src="../images/nav_icon/disabled-people.png" alt="">無障礙
                             </button>
                         </div>
-                        <input type="image" src="../images/other//loupe.png" class="icon mt-2 ms-0"
+                        <!-- 搜尋 icon = submit -->
+                        <input type="image" src="../images/nav_icon/loupe.png" class="icon mt-2 ms-0"
                             onclick="document.search.submit()">
+                        <!-- <img src="./img/loupe.png" class="icon mt-2 ms-1" alt="" type="submit"> -->
                     </div>
                 </form>
                 <!-- 登入及註冊按鈕 -->
-                <div class="ms-3 me-5 col-1" style="color:#8B4513;font-weight: bold;">
-                    Emily
+                <div class="ms-3 me-5 col-1">
+                    <a href="#" class="">
+                        <button class="btn btn-sm btnLogin text-nowrap">登入/註冊</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -122,13 +146,13 @@
             <div class="row align-self-center">
                 <div class="myTitle">Swallab</div>
                 <article>
-                        吃，除了吃飽，可以吃好，還可以吃得巧妙<br>
-                        吃可以是日常生活的一個小實驗<br>
-                        實驗你與大廚的匠心<br>
-                        實驗你與其他人的默契<br>
-                        實驗你自己的餐飲慣習<br><br>
-                        歡迎來到食嚥室<br>
-                        讓我們一起探索大街小巷的美食！<br>
+                    吃，除了吃飽，可以吃好，還可以吃得巧妙<br>
+                    吃可以是日常生活的一個小實驗<br>
+                    實驗你與大廚的匠心<br>
+                    實驗你與其他人的默契<br>
+                    實驗你自己的餐飲慣習<br><br>
+                    歡迎來到食嚥室<br>
+                    讓我們一起探索大街小巷的美食！<br>
                     </span>
                 </article>
             </div>
@@ -137,7 +161,7 @@
                 <div class="col-5 d-flex flex-column justify-content-center mt-3" style="overflow: hidden;">
                     <div id="mainImageRest">
                         <button href="" class="">
-                            <img src="../images/other/main_rest.jpg" alt="">
+                            <img src="../images/headpage_mainphoto/main_rest.jpeg" alt="">
                         </button>
                     </div>
                     <div class="row justify-content-center" id="btnRest">
@@ -146,12 +170,12 @@
                 </div>
                 <div class="col-5 d-flex flex-column justify-content-center mt-3" style="overflow: hidden;">
                     <div id="mainImageNotes">
-                        <a href="../foodNotes/foodNotes.html" class="">
-                            <img src="../images/other/main_notes.jpg" alt="">
-                        </a>
+                        <button href="#" class="">
+                            <img src="../images/headpage_mainphoto/main_notes.jpeg" alt="">
+                        </button>
                     </div>
                     <div class="row justify-content-center" id="btnNotes">
-                        <a href="../foodNotes/foodNotes.html" class="btn btn-outline-danger text-center mt-3 w-50">看食記</a>
+                        <a href="#" class="btn btn-outline-danger text-center mt-3 w-50">看食記</a>
                     </div>
                 </div>
             </div>
@@ -194,15 +218,34 @@
         </div>
     </footer>
     <!-- Footer_end -->
+    <script>
+        // let getUser = async () => {
+        //     const url = 'http://localhost/MySwallab/public/user_id'
+        //     let response = await fetch(url);
+        //     let data = await response.json();
+        //     // console.log(data);
+        //     return data
+        // }
+        let getUser = () => {
+            const url = 'http://localhost/MySwallab/public/user_id'
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                })
+        }
+
+        let info = getUser();
+        console.log(info);
+    </script>
 
 
-    <!-- <script>
-    </script> -->
-
+    <!-- <script type="module" src="../js/login.js"></script>
+    <script type="module" src="../js/backstage.js"></script> -->
     <script src="../js/jquery-3.7.1.js"></script>
     <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/headpage_opendoor_animate.js"></script>
-    <script src="../js/nav.js"></script>
+    <!-- <script src="../js/nav.js"></script> -->
     <script src="../js/footer.js"></script>
 </body>
 

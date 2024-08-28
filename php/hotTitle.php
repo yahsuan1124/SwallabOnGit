@@ -1,13 +1,13 @@
 <?php
 $host = 'localhost';
-$dbname = 'demo';
+$dbname = 'swallab';
 $user = 'root';
 
 //各分類統整的最新文章-標題+日期
 
 try {
     $db = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8mb4", $user);
-    $sql = 'select title, created_at from foodnotes order by created_at desc limit 3';
+    $sql = 'select title, created_at from membernotes order by created_at desc limit 3;';
     $result = $db->query($sql);
 
     $data = [];

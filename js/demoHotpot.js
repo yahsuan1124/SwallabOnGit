@@ -2,6 +2,23 @@ document.getElementById("top").addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
+//評論區滾動往下才會出現留言
+document.addEventListener("scroll", function () {
+  const contents = document.querySelectorAll(".test");
+  const triggerBottom = (window.innerHeight / 6) * 5;
+
+  contents.forEach((content) => {
+    const contentTop = content.getBoundingClientRect().top;
+
+    if (contentTop < triggerBottom) {
+      content.classList.add("show");
+    } else {
+      content.classList.remove("show");
+    }
+  });
+});
+
+
 const collectOK = () => {
   Swal.fire({
     icon: "success",
@@ -17,7 +34,6 @@ const collectNO = () => {
   });
 };
 
-
 $(".noColorHeart").on("click", function () {
   $("#heart").css({
     display: "inline",
@@ -27,6 +43,18 @@ $(".noColorHeart").on("click", function () {
     display: "none",
   });
   collectOK();
+  fetch("../php/collect.php?action=collectOK")
+    .then(function (response) {
+      console.log(response);
+
+      return response.text();
+    })
+    .then(function (text) {
+      console.log(text);
+    })
+    .catch(function (error) {
+      console.error("文章收藏錯誤:", error);
+    });
 });
 
 $("#heart").on("click", function () {
@@ -37,6 +65,18 @@ $("#heart").on("click", function () {
     display: "none",
   });
   collectNO();
+  fetch("../php/collect.php?action=collectNO")
+    .then(function (response) {
+      console.log(response);
+
+      return response.text();
+    })
+    .then(function (text) {
+      console.log(text);
+    })
+    .catch(function (error) {
+      console.error("文章取消收藏錯誤:", error);
+    });
 });
 
 
@@ -105,86 +145,7 @@ window.onload = () => {
       console.error("Error:", error);
     });
 
-  //抓文章下面餐廳名字
-  fetch("../php/article.php?action=restaurant")
-    .then(function (response) {
-      console.log(response);
-
-      return response.text();
-    })
-    .then(function (html) {
-      console.log(html);
-
-      $("#restaurant").text(html);
-    })
-    .catch(function (error) {
-      console.error("Error:", error);
-    });
-
-  //抓文章下面餐廳"均消"
-  fetch("../php/article.php?action=avg")
-    .then(function (response) {
-      console.log(response);
-
-      return response.text();
-    })
-    .then(function (html) {
-      console.log(html);
-
-      $("#avg").text(html);
-    })
-    .catch(function (error) {
-      console.error("Error:", error);
-    });
-
-  //抓文章下面餐廳"電話"
-  fetch("../php/article.php?action=tel")
-    .then(function (response) {
-      console.log(response);
-
-      return response.text();
-    })
-    .then(function (html) {
-      console.log(html);
-
-      $("#tel").text(html);
-    })
-    .catch(function (error) {
-      console.error("Error:", error);
-    });
-
-  //抓文章下面餐廳"地址"
-  fetch("../php/article.php?action=address")
-    .then(function (response) {
-      console.log(response);
-
-      return response.text();
-    })
-    .then(function (html) {
-      console.log(html);
-
-      $("#address").text(html);
-    })
-    .catch(function (error) {
-      console.error("Error:", error);
-    });
-
-  //抓文章下面餐廳"營業時間"
-  fetch("../php/article.php?action=openTime")
-    .then(function (response) {
-      console.log(response);
-
-      return response.text();
-    })
-    .then(function (html) {
-      console.log(html);
-
-      $("#openTime").text(html);
-    })
-    .catch(function (error) {
-      console.error("Error:", error);
-    });
-
+ 
 
 
 
@@ -199,9 +160,9 @@ window.onload = () => {
       .then((text) => {
         messagesContainer.innerHTML = text;
 
-        //留言的人uid是1的，就要有編輯+刪除按鈕
+        //留言的人uid是11的，就要有編輯+刪除按鈕
         document.querySelectorAll(".test").forEach((message, index) => {
-          if (message.dataset.uid == "7") {
+          if (message.dataset.uid == "11") {
             const editContainer = message.querySelector("#edit");
             if (editContainer) {
               editContainer.innerHTML = `
@@ -264,10 +225,10 @@ window.onload = () => {
               $("#editMessage").val(text);
             })
             .catch((error) => {
-              console.error(`编辑内容有错:`, error);
+              console.error(`編輯內容有錯:`, error);
             });
 
-          // 確保指綁定一個事件
+          // 確保只綁定一個事件
           $("#testEdit")
             .off("click", ".btnUpdate")
             .on("click", ".btnUpdate", function (event) {

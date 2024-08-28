@@ -10,7 +10,9 @@
     <link href="../css/root.css" rel="stylesheet">
     <link href="../css/nav.css" rel="stylesheet">
     <link href="../css/footer.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../css/loading.css">
 </head>
 
@@ -18,20 +20,21 @@
     <nav class="navbar navbar-expand sticky-top shadow">
         <div class="container">
             <!-- LOGO -->
-            <a class="navbar-brand ms-5 col-1" href="http://localhost/SwallabOnGit/headpage/headpage.html">
-                <img src="../images/other/logo.jpg" alt=""
-                    class="logo d-inline-block align-text-top">
+            <a class="navbar-brand ms-5 col-1" href="http://localhost/swallabLa/swallab/public/headpage/headpage">
+                <img src="../images/other/logo.jpg" alt="" class="logo d-inline-block align-text-top">
             </a>
             <!-- 伸縮 -->
             <div class="collapse navbar-collapse col-10" id="navbarSupportedContent">
                 <div class="nav ms-0 me-3 row">
                     <div class="nav-item col-6">
-                        <a id="rest" class="nav-link d-block nav_mainbtn" style="color:#8B4513;font-weight: bold;"
-                            href="http://localhost/swallabLa/swallab/public/restaurant/detail">找餐廳</a>
+                        <a id="rest" class="nav-link d-block nav_mainbtn"
+                            style="color:#8B4513;font-weight: bold;text-decoration: none;"
+                            href="http://localhost/SwallabOnGit/restaurant/restaurant.html">找餐廳</a>
                     </div>
                     <div class="nav-item col-6">
-                        <a id="resta" class="nav-link d-block nav_mainbtn" style="color:#8B4513;font-weight: bold;"
-                            href="http://localhost/test/foodNotes/foodNotes.html">看食記</a>
+                        <a id="resta" class="nav-link d-block nav_mainbtn"
+                            style="color:#8B4513;font-weight: bold;text-decoration: none;"
+                            href="http://localhost/SwallabOnGit/foodNotes/foodNotes.html">看食記</a>
                     </div>
                 </div>
                 <!-- Input 都在這 -->
@@ -83,18 +86,15 @@
                             </button>
                             <button class="position-absolute translate-middle rounded-pill filter_btn"
                                 style="margin-left: 50%;">
-                                <img class="icon" src="../images/other//confetti.png"
-                                    alt="">慶生
+                                <img class="icon" src="../images/other//confetti.png" alt="">慶生
                             </button>
                             <button class="position-absolute translate-middle rounded-pill filter_btn"
                                 style="margin-left: 70%;">
-                                <img class="icon" src="../images/other//handshake.png"
-                                    alt="">商務
+                                <img class="icon" src="../images/other//handshake.png" alt="">商務
                             </button>
                             <button class="position-absolute translate-middle rounded-pill filter_btn"
                                 style="margin-left: 90%;">
-                                <img class="icon" src="../images/other/disabledpeople.png"
-                                    alt="">無障礙
+                                <img class="icon" src="../images/other/disabledpeople.png" alt="">無障礙
                             </button>
                         </div>
                         <input type="image" src="../images/other//loupe.png" class="icon mt-2 ms-0"
@@ -102,8 +102,12 @@
                     </div>
                 </form>
                 <!-- 登入及註冊按鈕 -->
-                <div class="ms-3 me-5 col-1" style="color:#8B4513;font-weight: bold;">
-                    Emily
+                <div class="ms-3 me-5 col-1 d-flex text-nowrap">
+                    <h5 id="userName"></h5>
+                    <a href="#" class="">
+                        <button id="login" class="btn btn-sm btnLogin text-nowrap">登入/註冊</button>
+                        <button id="logout" class="d-none btn btn-sm btnLogin text-nowrap">登出</button>
+                    </a>
                 </div>
             </div>
         </div>
@@ -111,13 +115,13 @@
 
 
     <div class="container p-0">
-        
+
         <!-- 最新文章1+2 -->
         <div class="row p-0 title">
-            
+
             <div class="col-8 p-0">
                 <div class="height500">
-                    <img src="" class="img-fluid newTitle"/>
+                    <img src="" class="img-fluid newTitle" />
                     <div class="text-con">
                         <p class="ellipsis title" id="title1"></p>
                         <p></p>
@@ -125,21 +129,21 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-4 row p-0">
                 <div class="col-12">
                     <div class="img-con">
-                        <img src="" class="newTitle"/>
+                        <img src="" class="newTitle" />
                         <div class="text-con">
                             <p class="ellipsis title" id="title2"></p>
                             <p></p>
-                            <p class="latestDate-1"id="date2"></p>
+                            <p class="latestDate-1" id="date2"></p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
                     <div class="img-con">
-                        <img src="" class="newTitle"/>
+                        <img src="" class="newTitle" />
                         <div class="text-con">
                             <p class="ellipsis title" id="title3"></p>
                             <p></p>
@@ -149,42 +153,42 @@
                 </div>
             </div>
         </div>
-        
+
 
 
 
         <!-- 側邊欄+店家3*4 -->
-        <div class="row align-items-start justify-content-center mt8" >
+        <div class="row align-items-start justify-content-center mt8">
             <!-- 側邊欄 -->
             <div class="col-3 custom-ul sideBar">
                 <div class="mb-2 mt-3 ">
-                    <img src="../images/other/hot.png" alt="" id="hot"/>
+                    <img src="../images/other/hot.png" alt="" id="hot" />
                     <li>本週熱門</li>
                 </div>
                 <div class="mb-2 ">
-                    <img src="../images/other/hotpot.png" alt="" id="hotpot"/>
+                    <img src="../images/other/hotpot.png" alt="" id="hotpot" />
                     <li>火鍋</li>
                 </div>
                 <div class="mb-2">
-                    <img src="../images/other/barbecue.png" alt="" id="bbq"/>
+                    <img src="../images/other/barbecue.png" alt="" id="bbq" />
                     <li>燒肉</li>
                 </div>
-                <div class="mb-2"> 
-                    <img src="../images/other/ramen.png" alt="" id="ramen"/>
+                <div class="mb-2">
+                    <img src="../images/other/ramen.png" alt="" id="ramen" />
                     <li>拉麵</li>
                 </div>
                 <div class="mb-2">
-                    <img src="../images/other/izakaya.png" alt="" id="beer"/>
+                    <img src="../images/other/izakaya.png" alt="" id="beer" />
                     <li>居酒屋</li>
                 </div>
                 <div class="mb-2">
-                    <img src="../images/other/dessert.png" alt="" id="dessert"/>
+                    <img src="../images/other/dessert.png" alt="" id="dessert" />
                     <li>甜點</li>
-                </div>               
+                </div>
             </div>
             <!-- 店家3*4 -->
             <div class="col-9 mb-5">
-             <!-- 本週熱門 -->
+                <!-- 本週熱門 -->
                 <div class="row" id="cardTop">
                     <div id="myLoading">
                         <div class="loadingio-spinner-spinner-2by998twmg8">
@@ -204,15 +208,15 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
-                
-                
-            
-                
+
+
+
+
             </div>
 
-            
+
         </div>
 
 
@@ -227,18 +231,18 @@
 
 
 
-    
-
- 
 
 
 
-                
+
+
+
+
     <!-- 新增食記按鈕 -->
-    <!-- <a href="https://www.google.com.tw/"><img src="../images/other/write.png" alt="" width="40" id="write"/></a> -->
-    
+    <a href="https://www.google.com.tw/"><img src="../images/other/write.png" alt="" width="40" id="write" /></a>
+
     <!-- TOP按鈕 -->
-    <img src="../images/other/top.png" alt="" class="top" id="top"/>
+    <img src="../images/other/top.png" alt="" class="top" id="top" />
 
     <!-- Footer_begin -->
     <footer class="myFooter mt-3">
@@ -263,7 +267,7 @@
                 <div class="row justify-content-center mt-2 mb-3">
                     <!-- 二個 icon -->
                     <a href="#" class="col-6 text-center">
-                        <i class="fa-brands fa-facebook"></i>  <!-- facebook -->
+                        <i class="fa-brands fa-facebook"></i> <!-- facebook -->
                     </a>
                     <a href="#" class="col-6 text-center">
                         <i class="fa-brands fa-instagram"></i> <!-- instagram -->
@@ -274,11 +278,26 @@
         </div>
     </footer>
 
+    <!-- <script>
+        let getUser = () => {
+            const url = 'http://localhost/MySwallab/public/user_id'
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                })
+        }
+
+        let info = getUser();
+        console.log(info);
+    </script> -->
+    <script type="module" src="../js/login.js"></script>
+
     <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/jquery-3.7.1.js"></script>
     <script src="../js/foodNoted.js"></script>
     <script src="../js/footer.js"></script>
     <!-- <script src="../js/nav.js"></script> -->
 </body>
-</html>
 
+</html>

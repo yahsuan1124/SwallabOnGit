@@ -1,0 +1,35 @@
+body{
+    background-image: url(./image/大專bg.png);
+}
+.my-header{
+    width: 100%;
+}
+.icon-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background-color: #fff;
+    margin-bottom: 10px;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+.header-img {
+    width: 100%; 
+    margin: 0 auto; 
+    position: relative
+}
+
+.header-img img {
+    width: 100%; 
+    height: 500px;
+}
+
+

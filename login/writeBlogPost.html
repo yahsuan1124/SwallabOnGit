@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.ckeditor.com/ckeditor5/36.0.1/classic/ckeditor.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link href="../css/footer.css" rel="stylesheet">
+    <link href="../css/nav.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/writeBlogPost.css">
+    <script scr="../js/nav.js"></script>
+    <script scr="../js/footer.js"></script>
+    <title>Write Blog Post</title>
+</head>
+<body>
+    <!-- NAV_begin : sticky-top -->
+    <nav class="navbar navbar-expand sticky-top shadow">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand ms-5 col-1" href="../headpage/headpage.html">
+                <img src="../images/root/logo.jpg" alt="" class="logo d-inline-block align-text-top">
+            </a>
+            <!-- 伸縮 -->
+            <div class="collapse navbar-collapse col-10" id="navbarSupportedContent">
+                <div class="nav ms-0 me-3 row">
+                    <div class="nav-item col-6">
+                        <!-- 首頁沒有 active -->
+                        <!-- <a class="nav-link active" aria-current="page" href="#">Active</a> -->
+                        <a class="nav-link d-block nav_mainbtn" href="../restaurant/detail.html">找餐廳</a>
+                    </div>
+                    <div class="nav-item col-6">
+                        <a class="nav-link d-block nav_mainbtn" href="../foodNotes/NewFoodNotes.html">看食記</a>
+                    </div>
+                </div>
+                <!-- Input 都在這 -->
+                <form class="ms-2 me-1 w-100" role="search" name="search">
+                    <div class="d-flex" style="width: 100%;">
+                        <!-- hover、click 換 icon -> src="./img/blog.png" -->
+                        <div id="theicon" class="theicon mt-2 me-0 align-items-center justify-content-center">
+                            <div id="popup"
+                                class="popup row text-center d-flex align-items-center justify-content-center">
+                                <p><i id="showicon" class=""></i></p>
+                            </div>
+                            <div id="popupBR" class="popupBR">
+                                <div id="popupBlog" class="col-6 text-center">
+                                    <p class="text-center"><i class="fa-solid fa-book-open"></i></p>
+                                </div>
+                                <div id="popupRest" class="col-6 text-center">
+                                    <p><i class="fa-solid fa-utensils"></i></p>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <!-- 搜尋框 + 情境按鈕(pill 會改成底線) -->
+                        <div class="d-block position-relative m-0 p-0 col">
+                            <!-- 搜尋框 start -->
+                            <!-- <input class="form-control m-0" type="search" placeholder="Click" aria-label="Search"> -->
+                            <div style="display: flex;" clas="row">
+                                <div class="col-6">
+                                    <input type="text" id="myInput" onclick="myFunction()" placeholder="點擊我"
+                                        class="form-control m-0">
+                                    <!-- from 資料庫 -->
+                                    <div id="myDropdown" class="dropdown-content"
+                                        style="display: none; position: absolute;">
+                                        <a href="#cate_no" onclick="fillInput('null')"
+                                            class="position-relative">不挑分類</a>
+                                        <a href="#cate_hotpot" onclick="fillInput('火鍋')"
+                                            class="position-relative">火鍋</a>
+                                        <a href="#cate_bbq" onclick="fillInput('燒肉')" class="position-relative">燒肉</a>
+                                        <a href="#cate_izakaya" onclick="fillInput('居酒屋')"
+                                            class="position-relative">居酒屋</a>
+                                        <a href="#cate_ramen" onclick="fillInput('拉麵')" class="position-relative">拉麵</a>
+                                        <a href="#cate_dessert" onclick="fillInput('甜點')"
+                                            class="position-relative">甜點</a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+
+                                    <input type="text" id="myInput2" onclick="myFunction2()" placeholder="點擊我"
+                                        class="form-control m-0 col-6">
+                                    <!-- from 資料庫 -->
+                                    <div id="myDropdown2" class="dropdown-content"
+                                        style="display: none; position: absolute;">
+                                        <a href="#loc_no" onclick="fillInput2('null')"
+                                            class="position-relative">不挑地區</a>
+                                        <a href="#loc_Taichung" onclick="fillInput2('台中市')"
+                                            class="position-relative">台中市</a>
+                                        <a href="#loc_1" onclick="fillInput2('選項2')" class="position-relative">選項2</a>
+                                        <a href="#loc_2" onclick="fillInput2('選項3')" class="position-relative">選項3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!-- 搜尋框 end -->
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 10%;">
+                                <img class="icon" src="../images/nav_icon/dating.png" alt="">約會
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 30%;">
+                                <img class="icon" src="../images/nav_icon/group.png" alt="">聚餐
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 50%;">
+                                <img class="icon" src="../images/nav_icon/confetti.png" alt="">慶生
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 70%;">
+                                <img class="icon" src="../images/nav_icon/handshake.png" alt="">商務
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 90%;">
+                                <img class="icon" src="../images/nav_icon/disabled-people.png" alt="">無障礙
+                            </button>
+                        </div>
+                        <!-- 搜尋 icon = submit -->
+                        <input type="image" src="../images/nav_icon/loupe.png" class="icon mt-2 ms-0"
+                            onclick="document.search.submit()">
+                        <!-- <img src="./img/loupe.png" class="icon mt-2 ms-1" alt="" type="submit"> -->
+                    </div>
+                </form>
+                <!-- 登入及註冊按鈕 -->
+                <div class="ms-3 me-5 col-1">
+                    <a href="#" class="">
+                        <button class="btn btn-sm btnLogin text-nowrap">登入/註冊</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV_end -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="mySidebar col-2">
+                <a href="./profile.html">
+                    <p>個人檔案</p>
+                </a>
+                <a href="./order.html">
+                    <p>我的訂單</p>
+                </a>
+                <a href="#">
+                    <p>歷史紀錄</p>
+                </a>
+                <a href="./writeBlogPost.html" class="active">
+                    <p>發布食記</p>
+                </a>
+            </div>
+            <div class="col">
+                <h4>發布食記</h4>
+                <form id="myBlog">
+                    <div class="formCon">
+                        <label for="title">標&emsp;&emsp;題 : &emsp;&emsp;</label>
+                        <input id="title" class="formInput" name="title">
+                    </div>
+                    <div class="formCon">
+                        <label for="titleImage">標題圖片 : &emsp;&emsp;</label>
+                        <input id="titleImage" class="formInput" name="titleImage" type="file">
+                        <span id="photoResult">
+                            新增圖片
+                        </span>
+                    </div>
+                    <div style="position: relative;">
+                        <div class="formCon">
+                            <label for="restaurantName">店&emsp;&emsp;名 : &emsp;&emsp;</label>
+                            <input name="restaurantName" id="restaurantName" class="formInput">
+                        
+                        </div>
+                        <div class="result-container">
+                            <ul id="result"></ul>
+                        </div>
+                    </div>
+                    
+                    <div class="formCon">
+                        <label for="averageCost">平均消費 : &emsp;&emsp;</label>
+                        <input id="averageCost" class="formInput" name="averageCost">
+                    </div>
+                    <div style="position: relative;">
+                        <div class="formCon">
+                            <label for="eatTime">用餐日期 :&emsp;&emsp; </label>
+                            <input id="eatTime" class="formInput" name="eatTime" type="datetime-local">
+                        </div>
+                        <p id="eatTimeResult">開始時間不能大於當前時間</p>
+                    </div>
+                    
+                    
+                    <textarea name="editor" id="editor"></textarea>
+                    <div class="editorBtn">
+                        <span id="mySubmitResult"></span>
+                        <button id="editorBtn" type="submit">送出</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Footer_begin -->
+    <footer class="myFooter mt-3">
+        <!-- 左右二欄 -->
+        <div class="row justify-content-center mt-3 container">
+            <!-- 左邊logo -->
+            <div class="col-4 text-center"></div>
+            <div class="col-2 justify-content-center">
+                <img src="../images/root/logo.jpg" class="logo" alt="">
+                <div class="text-center">
+                    <span class="rights text-nowrap">© 版權聲明</span>
+                </div>
+            </div>
+            <!-- 右邊三列 -->
+            <div class="col-2">
+                <div class="">
+                    <a class="btn btnFooter text-nowrap">找餐廳</a>
+                </div>
+                <div class="">
+                    <a class="btn btnFooter text-nowrap">看食記</a>
+                </div>
+                <div class="row justify-content-center">
+                    <!-- 二個 icon -->
+                    <a href="#" class="col-6 text-center">
+                        <i class="fa-brands fa-facebook"></i>  <!-- facebook -->
+                    </a>
+                    <a href="#" class="col-6 text-center">
+                        <i class="fa-brands fa-instagram"></i> <!-- instagram -->
+                    </a>
+                </div>
+            </div>
+            <div class="col-4 text-center"></div>
+        </div>
+    </footer>
+    <!-- Footer_end -->
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script scr="../js/nav.js"></script>
+    <script scr="../js/footer.js"></script>
+    <script src="../js/writeBlogPost.js"></script>
+</body>
+</html>

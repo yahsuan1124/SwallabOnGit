@@ -1,5 +1,29 @@
+/* 家緯加的 */
+.d-none {
+    display: none;
+}
+
+#userName {
+    padding: 4px 20px;
+    margin: 0;
+    font-weight: bold;
+    color: #8B4513;
+}
+/* ============== */
+
 .nav_mainbtn {
     white-space: nowrap;
+    color:#8B4513;font-weight: bold;
+    text-decoration: none;
+}
+
+.nav_mainbtn_rest{
+    margin-left: 5px;
+    margin-right: 20px;
+}
+
+.nav_mainbtn_note{
+    margin-left: 20px;
 }
 
 .icon {
@@ -97,3 +121,24 @@
     background-color: #e5a67a !important;
     color: white !important;
 }
+
+#myDropdown2 {
+    max-width: 200px;
+    max-height: 150px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ddd;
+    z-index: 1000;
+}
+
+#myDropdown2 a {
+    display: flex;
+    padding: 8px;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+#myDropdown2 a:hover {
+    background-color: #e5a67a;
+    color: white;}

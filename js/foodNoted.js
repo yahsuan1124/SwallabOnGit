@@ -2,20 +2,19 @@ document.getElementById("top").addEventListener("click", function () {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
 
-function showLoading() {
-  $("#myLoading").css("display", "block");
+function showLoading(){
+  $("#myLoading").css("display","block")
   console.log("顯示loading");
+  
 }
 function hideLoading() {
   $("#myLoading").css("display", "none");
   console.log("隱藏loading");
 }
 showLoading();
-
-
-
 //網頁載入-最熱門
 window.onload = function () {
+  
   ///最新文章1+2 ==>標題+日期 ==> 用id
   $.ajax({
     url: "../php/hotTitle.php",
@@ -23,8 +22,8 @@ window.onload = function () {
     dataType: "json",
   })
     .done(function (mytitle) {
-      console.log(mytitle);
-      // console.log(mytitle[2].title);
+      console.log(mytitle); //陣列
+
       // 顯示評論
       $("#title1").text(mytitle[0].title);
       $("#title2").text(mytitle[1].title);
@@ -32,6 +31,7 @@ window.onload = function () {
 
       // 指定日期格式
       function formatDate(dateString) {
+        console.log(dateString)
         const date = new Date(dateString);
         console.log(date);
         const day = String(date.getDate()).padStart(2, "0");
@@ -48,26 +48,25 @@ window.onload = function () {
     .fail(function (cat) {
       console.log("2.最新文章fail:", cat);
     })
-    .always(function () {
-      console.log("3.always:最新文章");
-    });
 
   //最新文章的照片1+2
   let newTitle = document.querySelectorAll(".newTitle");
 
   fetch(`../php/hotImageTitle.php`)
-    .then((response) => response.json())
+    .then((response) => response.text())
     .then((images) => {
-      images.forEach((imgData, index) => {
+      const imageUrls = images.trim().split("\n"); //頭尾去空白，再去換行
+      console.log(imageUrls);  //陣列
+      imageUrls.forEach((imgUrl, index) => {
         if (index < newTitle.length) {
-          let imgURL = `data:${imgData.mime_type};base64,${imgData.image}`;
-          newTitle[index].src = imgURL;
+          newTitle[index].src = imgUrl.trim(); //每個照片頭尾去空白
         }
       });
     })
     .catch((error) => {
       console.error("失敗", error);
     });
+
 
   //card的照片+標題+瀏覽人數
   let cardTop = document.getElementById("cardTop");
@@ -78,6 +77,7 @@ window.onload = function () {
     .then((response) => response.text())
     .then((text) => {
       cardTop.innerHTML = text;
+      hideLoading();
     })
     .catch((error) => {
       console.error("獲取圖片失敗", error);
@@ -85,16 +85,15 @@ window.onload = function () {
 };
 
 //熱門排行
-$("#hot").on("click",function() {
-  ///最新文章1+2 ==>標題+日期 ==> 用id
+$("#hot").on("click",function(){
+  //最新文章1+2 ==>標題+日期 ==> 用id
   $.ajax({
     url: "../php/hotTitle.php",
-    method: "POST",
-    dataType: "json",
+    method: "POST"
   })
     .done(function (mytitle) {
       console.log(mytitle);
-      // console.log(mytitle[2].title);
+
       // 顯示評論
       $("#title1").text(mytitle[0].title);
       $("#title2").text(mytitle[1].title);
@@ -126,18 +125,19 @@ $("#hot").on("click",function() {
   let newTitle = document.querySelectorAll(".newTitle");
 
   fetch(`../php/hotImageTitle.php`)
-    .then((response) => response.json())
+    .then((response) => response.text())
     .then((images) => {
-      images.forEach((imgData, index) => {
+      const imageUrls = images.trim().split("\n"); // 按行分割獲取的字符串
+      imageUrls.forEach((imgUrl, index) => {
         if (index < newTitle.length) {
-          let imgURL = `data:${imgData.mime_type};base64,${imgData.image}`;
-          newTitle[index].src = imgURL;
+          newTitle[index].src = imgUrl.trim(); // 設置每個圖片元素的 src
         }
       });
     })
     .catch((error) => {
       console.error("失敗", error);
     });
+
 
   //card的照片+標題+瀏覽人數
   let cardTop = document.getElementById("cardTop");
@@ -152,7 +152,7 @@ $("#hot").on("click",function() {
     .catch((error) => {
       console.error("獲取圖片失敗", error);
     });
-});
+})
 
 //火鍋排行
 $("#hotpot").on("click",function(){
@@ -196,12 +196,12 @@ $("#hotpot").on("click",function(){
   let newTitle = document.querySelectorAll(".newTitle");
 
   fetch(`../php/hotpotImageTitle.php`)
-    .then((response) => response.json())
+    .then((response) => response.text())
     .then((images) => {
-      images.forEach((imgData, index) => {
+      const imageUrls = images.trim().split("\n"); // 按行分割獲取的字符串
+      imageUrls.forEach((imgUrl, index) => {
         if (index < newTitle.length) {
-          let imgURL = `data:${imgData.mime_type};base64,${imgData.image}`;
-          newTitle[index].src = imgURL;
+          newTitle[index].src = imgUrl.trim(); // 設置每個圖片元素的 src
         }
       });
     })
@@ -266,12 +266,12 @@ $("#bbq").on("click",function(){
   let newTitle = document.querySelectorAll(".newTitle");
 
   fetch(`../php/bbqImageTitle.php`)
-    .then((response) => response.json())
+    .then((response) => response.text())
     .then((images) => {
-      images.forEach((imgData, index) => {
+      const imageUrls = images.trim().split("\n"); // 按行分割獲取的字符串
+      imageUrls.forEach((imgUrl, index) => {
         if (index < newTitle.length) {
-          let imgURL = `data:${imgData.mime_type};base64,${imgData.image}`;
-          newTitle[index].src = imgURL;
+          newTitle[index].src = imgUrl.trim(); // 設置每個圖片元素的 src
         }
       });
     })
@@ -336,12 +336,12 @@ $("#ramen").on("click", function () {
   let newTitle = document.querySelectorAll(".newTitle");
 
   fetch(`../php/ramenImageTitle.php`)
-    .then((response) => response.json())
+    .then((response) => response.text())
     .then((images) => {
-      images.forEach((imgData, index) => {
+      const imageUrls = images.trim().split("\n"); // 按行分割獲取的字符串
+      imageUrls.forEach((imgUrl, index) => {
         if (index < newTitle.length) {
-          let imgURL = `data:${imgData.mime_type};base64,${imgData.image}`;
-          newTitle[index].src = imgURL;
+          newTitle[index].src = imgUrl.trim(); // 設置每個圖片元素的 src
         }
       });
     })
@@ -406,12 +406,12 @@ $("#beer").on("click",function(){
   let newTitle = document.querySelectorAll(".newTitle");
 
   fetch(`../php/beerImageTitle.php`)
-    .then((response) => response.json())
+    .then((response) => response.text())
     .then((images) => {
-      images.forEach((imgData, index) => {
+      const imageUrls = images.trim().split("\n"); // 按行分割獲取的字符串
+      imageUrls.forEach((imgUrl, index) => {
         if (index < newTitle.length) {
-          let imgURL = `data:${imgData.mime_type};base64,${imgData.image}`;
-          newTitle[index].src = imgURL;
+          newTitle[index].src = imgUrl.trim(); // 設置每個圖片元素的 src
         }
       });
     })
@@ -476,12 +476,12 @@ $("#dessert").on("click", function () {
   let newTitle = document.querySelectorAll(".newTitle");
 
   fetch(`../php/dessertImageTitle.php`)
-    .then((response) => response.json())
+    .then((response) => response.text())
     .then((images) => {
-      images.forEach((imgData, index) => {
+      const imageUrls = images.trim().split("\n"); // 按行分割獲取的字符串
+      imageUrls.forEach((imgUrl, index) => {
         if (index < newTitle.length) {
-          let imgURL = `data:${imgData.mime_type};base64,${imgData.image}`;
-          newTitle[index].src = imgURL;
+          newTitle[index].src = imgUrl.trim(); // 設置每個圖片元素的 src
         }
       });
     })

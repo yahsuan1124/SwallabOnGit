@@ -4,7 +4,7 @@ $dbname = "demo";
 $user = "root";
 
 try {
-    $db = new PDO("mysql:host=${host};dbname=${dbname}", $user);  
+    $db = new PDO("mysql:host={$host};dbname={$dbname}", $user);  
     $sql = 'select image from foodnotes order by date desc limit 3';  
     $stmt = $db->prepare($sql);
     $stmt->execute();

@@ -29,101 +29,99 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-expand sticky-top shadow">
-            <div class="container">
-                <!-- LOGO -->
-                <a class="navbar-brand ms-5 col-1" href="http://localhost/swallabLa/swallab/public/headpage/headpage">
-                    <img src="../images/other/logo.jpg" alt=""
-                        class="logo d-inline-block align-text-top">
-                </a>
-                <!-- 伸縮 -->
-                <div class="collapse navbar-collapse col-10" id="navbarSupportedContent">
-                    <div class="nav ms-0 me-3 row">
-                        <div class="nav-item col-6">
-                            <a id="rest" class="nav-link d-block nav_mainbtn"
-                                href="http://localhost/swallabLa/swallab/public/restaurant/detail">找餐廳</a>
-                        </div>
-                        <div class="nav-item col-6">
-                            <a id="resta" class="nav-link d-block nav_mainbtn"
-                                href="http://localhost/swallab/Swallab/foodNotes/foodNotes.html">看食記</a>
-                        </div>
+    <nav class="navbar navbar-expand sticky-top shadow">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand ms-5 col-1" href="http://localhost/swallabLa/swallab/public/headpage/headpage">
+                <img src="../images/other/logo.jpg" alt=""
+                    class="logo d-inline-block align-text-top">
+            </a>
+            <!-- 伸縮 -->
+            <div class="collapse navbar-collapse col-10" id="navbarSupportedContent">
+                <div class="nav ms-0 me-3 row">
+                    <div class="nav-item col-6">
+                        <a id="rest" class="nav-link d-block nav_mainbtn" style="color:#8B4513;font-weight: bold;"
+                            href="http://localhost/SwallabOnGit/restaurant/restaurant.html">找餐廳</a>
                     </div>
-                    <!-- Input 都在這 -->
-                    <form class="ms-2 me-1 w-100" role="search" name="search">
-                        <div class="d-flex" style="width: 100%;">
-                            <div id="theicon" class="mt-2 me-0 align-items-center justify-content-center"></div>
-                            <!-- 搜尋框 + 情境按鈕(pill 會改成底線) -->
-                            <div class="d-block position-relative m-0 p-0 col">
-                                <div style="display: flex;" class="row">
-                                    <div class="col-6">
-                                        <input type="text" id="myInput" onclick="myFunction()" placeholder="點擊我"
-                                            class="form-control m-0">
-                                        <div id="myDropdown" class="dropdown-content"
-                                            style="display: none; position: absolute;">
-                                            <a href="#cate_no" onclick="fillInput('null')"
-                                                class="position-relative">不挑分類</a>
-                                            <a href="#cate_hotpot" onclick="fillInput('火鍋')"
-                                                class="position-relative">火鍋</a>
-                                            <a href="#cate_bbq" onclick="fillInput('燒肉')" class="position-relative">燒肉</a>
-                                            <a href="#cate_izakaya" onclick="fillInput('居酒屋')"
-                                                class="position-relative">居酒屋</a>
-                                            <a href="#cate_ramen" onclick="fillInput('拉麵')" class="position-relative">拉麵</a>
-                                            <a href="#cate_dessert" onclick="fillInput('甜點')"
-                                                class="position-relative">甜點</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <input type="text" id="myInput2" onclick="myFunction2()" placeholder="點擊我"
-                                            class="form-control m-0">
-                                        <div id="myDropdown2" class="dropdown-content"
-                                            style="display: none; position: absolute;">
-                                            <a href="#loc_no" onclick="fillInput2('null')"
-                                                class="position-relative">不挑地區</a>
-                                            <a href="#loc_Taichung" onclick="fillInput2('台中市')"
-                                                class="position-relative">台中市</a>
-                                            <a href="#loc_1" onclick="fillInput2('選項2')" class="position-relative">選項2</a>
-                                            <a href="#loc_2" onclick="fillInput2('選項3')" class="position-relative">選項3</a>
-                                        </div>
-                                    </div>
-                                </div>
-    
-                                <button class="position-absolute translate-middle rounded-pill filter_btn"
-                                    style="margin-left: 10%;">
-                                    <img class="icon" src="../images/other/dating.png" alt="">約會
-                                </button>
-                                <button class="position-absolute translate-middle rounded-pill filter_btn"
-                                    style="margin-left: 30%;">
-                                    <img class="icon" src="../images/other/group.png" alt="">聚餐
-                                </button>
-                                <button class="position-absolute translate-middle rounded-pill filter_btn"
-                                    style="margin-left: 50%;">
-                                    <img class="icon" src="../images/other//confetti.png"
-                                        alt="">慶生
-                                </button>
-                                <button class="position-absolute translate-middle rounded-pill filter_btn"
-                                    style="margin-left: 70%;">
-                                    <img class="icon" src="../images/other//handshake.png"
-                                        alt="">商務
-                                </button>
-                                <button class="position-absolute translate-middle rounded-pill filter_btn"
-                                    style="margin-left: 90%;">
-                                    <img class="icon" src="../images/other/disabledpeople.png"
-                                        alt="">無障礙
-                                </button>
-                            </div>
-                            <input type="image" src="../images/other//loupe.png" class="icon mt-2 ms-0"
-                                onclick="document.search.submit()">
-                        </div>
-                    </form>
-                    <!-- 登入及註冊按鈕 -->
-                    <div class="ms-3 me-5 col-1" style="color:blue">
-                        David
+                    <div class="nav-item col-6">
+                        <a id="resta" class="nav-link d-block nav_mainbtn" style="color:#8B4513;font-weight: bold;"
+                            href="http://localhost/SwallabOnGit/foodNotes/foodNotes.html">看食記</a>
                     </div>
                 </div>
+                <!-- Input 都在這 -->
+                <form class="ms-2 me-1 w-100" role="search" name="search">
+                    <div class="d-flex" style="width: 100%;">
+                        <div id="theicon" class="mt-2 me-0 align-items-center justify-content-center"></div>
+                        <!-- 搜尋框 + 情境按鈕(pill 會改成底線) -->
+                        <div class="d-block position-relative m-0 p-0 col">
+                            <div style="display: flex;" class="row">
+                                <div class="col-6">
+                                    <input type="text" id="myInput" onclick="myFunction()" placeholder="點擊我"
+                                        class="form-control m-0">
+                                    <div id="myDropdown" class="dropdown-content"
+                                        style="display: none; position: absolute;">
+                                        <a href="#cate_no" onclick="fillInput('null')"
+                                            class="position-relative">不挑分類</a>
+                                        <a href="#cate_hotpot" onclick="fillInput('火鍋')"
+                                            class="position-relative">火鍋</a>
+                                        <a href="#cate_bbq" onclick="fillInput('燒肉')" class="position-relative">燒肉</a>
+                                        <a href="#cate_izakaya" onclick="fillInput('居酒屋')"
+                                            class="position-relative">居酒屋</a>
+                                        <a href="#cate_ramen" onclick="fillInput('拉麵')" class="position-relative">拉麵</a>
+                                        <a href="#cate_dessert" onclick="fillInput('甜點')"
+                                            class="position-relative">甜點</a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <input type="text" id="myInput2" onclick="myFunction2()" placeholder="點擊我"
+                                        class="form-control m-0">
+                                    <div id="myDropdown2" class="dropdown-content"
+                                        style="display: none; position: absolute;">
+                                        <a href="#loc_no" onclick="fillInput2('null')"
+                                            class="position-relative">不挑地區</a>
+                                        <a href="#loc_Taichung" onclick="fillInput2('台中市')"
+                                            class="position-relative">台中市</a>
+                                        <a href="#loc_1" onclick="fillInput2('選項2')" class="position-relative">選項2</a>
+                                        <a href="#loc_2" onclick="fillInput2('選項3')" class="position-relative">選項3</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 10%;">
+                                <img class="icon" src="../images/other/dating.png" alt="">約會
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 30%;">
+                                <img class="icon" src="../images/other/group.png" alt="">聚餐
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 50%;">
+                                <img class="icon" src="../images/other//confetti.png"
+                                    alt="">慶生
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 70%;">
+                                <img class="icon" src="../images/other//handshake.png"
+                                    alt="">商務
+                            </button>
+                            <button class="position-absolute translate-middle rounded-pill filter_btn"
+                                style="margin-left: 90%;">
+                                <img class="icon" src="../images/other/disabledpeople.png"
+                                    alt="">無障礙
+                            </button>
+                        </div>
+                        <input type="image" src="../images/other//loupe.png" class="icon mt-2 ms-0"
+                            onclick="document.search.submit()">
+                    </div>
+                </form>
+                <!-- 登入及註冊按鈕 -->
+                <div class="ms-3 me-5 col-1" style="color:#8B4513;font-weight: bold;">
+                    Emily
+                </div>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <div class="container">
         <div class="container">
@@ -463,41 +461,37 @@
         <!-- top -->
         <img src="./../images/other/top.png" class="top" id="top">
     </div>
-    <footer>
-        <footer class="myFooter mt-3">
-            <!-- 左右二欄 -->
-            <div class="row justify-content-center mt-3 container">
-                <!-- 左邊logo -->
-                <div class="col-4 text-center"></div>
-                <div class="col-2 d-flex flex-column align-items-center">
-                    <img src="../images/root/logo.jpg" class="logo mb-4" alt="">
-                    <div class="rights text-nowrap">© 版權聲明</div>
-                </div>
-    
-    
-                <!-- 右邊三列 -->
-                <div class="col-2">
-                    <div class="">
-                        <a class="btn btnFooter text-nowrap mb-2">找餐廳</a>
-                    </div>
-                    <div class="">
-                        <a class="btn btnFooter text-nowrap mb-2">看食記</a>
-                    </div>
-                    <div class="row justify-content-center mt-2 mb-3">
-                        <!-- 二個 icon -->
-                        <a href="#" class="col-6 text-center">
-                            <i class="fa-brands fa-facebook"></i>  <!-- facebook -->
-                        </a>
-                        <a href="#" class="col-6 text-center">
-                            <i class="fa-brands fa-instagram"></i> <!-- instagram -->
-                        </a>
-                    </div>
-                </div>
-                <div class="col-4 text-center"></div>
+    <footer class="myFooter mt-3">
+        <!-- 左右二欄 -->
+        <div class="row justify-content-center mt-3 container">
+            <!-- 左邊logo -->
+            <div class="col-4 text-center"></div>
+            <div class="col-2 d-flex flex-column align-items-center">
+                <img src="../images/root/logo.jpg" class="logo mb-4" alt="">
+                <div class="rights text-nowrap">© 版權聲明</div>
             </div>
-        </footer>
-    
-    
+
+
+            <!-- 右邊三列 -->
+            <div class="col-2">
+                <div class="">
+                    <a class="btn btnFooter text-nowrap mb-2">找餐廳</a>
+                </div>
+                <div class="">
+                    <a class="btn btnFooter text-nowrap mb-2">看食記</a>
+                </div>
+                <div class="row justify-content-center mt-2 mb-3">
+                    <!-- 二個 icon -->
+                    <a href="#" class="col-6 text-center">
+                        <i class="fa-brands fa-facebook"></i>  <!-- facebook -->
+                    </a>
+                    <a href="#" class="col-6 text-center">
+                        <i class="fa-brands fa-instagram"></i> <!-- instagram -->
+                    </a>
+                </div>
+            </div>
+            <div class="col-4 text-center"></div>
+        </div>
     </footer>
 
 

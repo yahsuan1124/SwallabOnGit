@@ -1,24 +1,28 @@
 .myFooter {
-    padding-left: 20%;
-    padding-right: 20%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .btnFooter {
-    /* background-color: #e5a67a !important; */
-    color: white !important;
-    border-radius: 5%;
-    width: 100% !important;
+  /* background-color: #e5a67a !important; */
+  color: white !important;
+  border-radius: 5%;
+  width: 100% !important;
 }
 
 .btnFooter:hover {
-    background-color: #e5a67a !important;
-    color: white !important;
+  background-color: #e5a67a !important;
+  color: white !important;
 }
 
-i {
-    color: black;
+.fa-instagram {
+  color: #e1306c;
 }
 
-.rights{
-    font-size: xx-small;
+.fa-facebook {
+  color: #4267b2;
+}
+
+.rights {
+  font-size: xx-small;
 }

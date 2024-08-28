@@ -116,7 +116,7 @@ footer{
     display: block;
     width:70%;
 }
-.bigArticle+article{
+.bigArticle>article{
     width:80%;
     margin: auto;
 }
@@ -182,8 +182,8 @@ footer{
     margin: auto;
 }
 .commentHeadphoto > div:nth-child(1) img{
-    width: 130px;
-    height: 130px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 50%;
 }
@@ -194,7 +194,6 @@ footer{
     flex: 1;
     display: flex;
     padding: 10px 20px 0 20px;
-    font-size: 20px;
 }
 /* .commentHeadphoto>div:nth-child(2)>p:nth-child(3) button{
     align-self: flex-end;

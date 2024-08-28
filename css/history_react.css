@@ -1,0 +1,172 @@
+/* member-activity-styles.css */
+
+.member-activity-container {
+    padding: 20px;
+}
+
+.breadcrumb {
+    list-style: none;
+    overflow: hidden;
+    font: 15px Helvetica, Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+.breadcrumb a {
+    color: #666;
+    text-decoration: none;
+    padding: 10px 0 10px 55px;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.breadcrumb span {
+    color: #666;
+    text-decoration: none;
+    padding: 10px 0 10px 20px;
+    position: relative;
+    display: block;
+    float: left;
+}
+
+.breadcrumb a.active,
+.breadcrumb a:hover {
+    color: #5d5d5d;
+    text-decoration: underline;
+}
+
+.tab-buttons {
+    margin-bottom: 15px;
+}
+
+.tab-button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.tab-button.active {
+    background-color: #e5a67a;
+    color: white;
+}
+
+.tab-button:hover {
+    background-color: #e5a67a;
+    color: white;
+}
+
+.activity-list {
+    margin-top: 20px;
+}
+
+.activity-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 3px 3px 3px #aaa;
+}
+
+.activity-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.activity-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.activity-content {
+    margin-bottom: 10px;
+}
+
+.activity-info {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.activity-buttons {
+    margin-top: 10px;
+}
+
+.activity-button {
+    margin-right: 10px;
+    padding: 5px 10px;
+    background-color: #e5a67a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.activity-button:hover {
+    background-color: #d48d5f;
+}
+
+.load-more-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.load-more-button:hover {
+    background-color: #218838;
+}
+
+.myRecordsTemp {
+    background-color: white;
+    box-shadow: 3px 3px 3px #aaa;
+    margin: 5%;
+    padding: 2%;
+    height: fit-content;
+}
+
+.myRecordsContainer {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.myRecordsContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.myRecordsInfo {
+    display: flex;
+    flex-direction: column;
+    font-size: smaller;
+}
+.myNotes{
+    height: 60px;
+}
+.myRecordsInfo span {
+    margin-bottom: 5px;
+}
+
+.myRecordsBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.myRecordsBtn button {
+    font-size: smaller;
+    text-wrap: nowrap;
+}

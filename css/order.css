@@ -1,0 +1,113 @@
+header{
+    background-image: none;
+    background-color: #EEE9D5;
+    }
+body{
+    background-image: url("./../image/大專bg.png");
+    background-attachment: fixed;
+}
+footer{background-color: #ecdea8;}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+.product-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+.btn-outline-primary{
+    background-color: #e5a67a;
+    color:white;
+    border: none;
+    width: 100px;
+}
+
+.card-title,
+.card-text {
+    color: #6c757d;
+}
+
+.sidebar {
+    background-color:white;
+    padding: 20px;
+    min-height: 100vh;
+    
+}
+
+.sidebar a {
+    color: white;
+    font-size: 2cqh;
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    background-color:#e5a67a;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #003f7f;
+}
+
+.product-details, .product-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.product-details span, .product-actions span {
+    margin: 5px 0;
+}
+.btn-quantity {
+    display: flex;
+    align-items: center;
+}
+.btn-quantity button {
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+}
+.btn-quantity span {
+    margin: 0 10px;
+    font-size: 20px;
+}
+.items{
+    font-size: 20px;
+    
+}
+.price{
+    font-size: 20px;
+    
+}
+.my-btn{
+    font-size: 20px;
+    width: 30px;
+    height: 50px;
+}
+.fs-20{
+    font-size: 20px;
+}
+.trash{
+    font-size: 25px;
+    color: #003f7f;
+}
+.rounded-button {
+    border-radius: 50%;
+    width: 30px; 
+    height: 30px; 
+    margin: 8px;
+    
+}
+.btn-warning{
+    background-color: #e5a67a;
+    color:white;
+    border: none;
+    width: 100px;
+}

@@ -14,10 +14,7 @@ footer{
     background-color: #ecdea8;
     flex-shrink: 0;
 }
-#myLoading{
-    text-align: center;
-    /* display: none; */
-}
+
 .icon {
         height: 1.5em;
     }
@@ -40,6 +37,10 @@ footer{
 .sideBar {
     position: sticky;
     top: 50px; /* 導覽列的高度 */
+}
+#myLoading{
+    text-align: center;
+    display: none;
 }
 /* 新增食記按鈕 */
 #write{

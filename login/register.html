@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+</head>
+<body>
+    <h3>註冊</h3>
+    <form id="registerForm">
+        <label for="name">姓名 :</label>
+        <input name="name" id="name">
+        <br>
+        <label for="email">帳號 :</label>
+        <input name="email" id="email">
+        <br>
+        <label for="password">密碼 :</label>
+        <input name="password" id="password">
+        <br>
+        <label for="password_confirmation">再次輸入密碼 :</label>
+        <input name="password_confirmation" id="password_confirmation">
+        <br>
+        <label for="phone">電話 :</label>
+        <input name="phone" id="phone">
+        <br>
+        <label for="role">角色 :</label>
+        <select name="role" id="role">
+            <option selected disabled>請選擇...</option>
+            <option value="member">會員</option>
+            <option value="admin">店家</option>
+        </select>
+        <br>
+        <label for="avatar">大頭照 :</label>
+        <input name="avatar" id="avatar" type="file">
+        <br>
+        <input type="submit" value="送出">
+    </form>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', async event => {
+            event.preventDefault();
+            let password = document.getElementById('password').value;
+            let password_confirmation = document.getElementById('password_confirmation').value;
+            if(password === password_confirmation) {
+                console.log('成功');
+                const body = new FormData(registerForm);
+                const url = 'http://localhost/MySwallab/public/api/store';
+
+                let response = await fetch(url, {
+                    method: 'POST',
+                    body
+                });
+                let result = await response.json();
+                // let result = await response.text();
+                console.log(result);
+                
+            } else {
+                console.log('失敗');
+                
+            }
+            
+        })
+    </script>
+</body>
+</html>

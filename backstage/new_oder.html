@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/backstage.css">
+    <link rel="stylesheet" href="../css/nav.css">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/loading.css">
+    <script scr="../js/nav.js"></script>
+    <title>New Oder</title>
+</head>
+<body>
+    <!-- NAV_begin : sticky-top -->
+    <nav class="navbar navbar-expand sticky-top shadow">
+        <div class="container">
+            <!-- LOGO -->
+            <a class="navbar-brand ms-5 col-1" href="../headpage/headpage.html">
+                <img src="../images/root/logo.jpg" alt="" class="logo d-inline-block align-text-top">
+            </a>
+            
+            <div class="ms-3 me-5 col-1 d-flex text-nowrap">
+                <h5 id="userName"></h5>
+                <a href="#" class="">
+                    <button id="logout" class="rounded-3 btn btn-sm btnLogin text-nowrap">登出</button>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <!-- NAV_end -->
+    <div class="container">
+
+        <div class="row">
+            <div class="mySidebar col-2">
+                <a href="./new_oder.html" class="active">
+                    <p>訂單狀況</p>
+                </a>
+                <a href="./set_time.html">
+                    <p>編輯營業時間</p>
+                </a>
+                <a href="./management_menu1.html">
+                    <p>菜單管理</p>
+                </a>
+                <a href="./set_info.html">
+                    <p>編輯餐廳資料</p>
+                </a>
+            </div>
+            <div class="col">
+                <div class="options d-flex">
+                    <a href="./new_oder.html" class="active">
+                        <h3>新訂單</h3>
+                    </a>
+                    <a href="./ready_to_serve.html">
+                        <h3>準備出餐</h3>
+                    </a>
+                </div>
+                <div class="orderStatus">
+                    <h4>
+                        新訂單 : 
+                        <span id="status1"></span>
+                    </h4>
+                    <h4>
+                        準備出餐 : 
+                        <span id="status2"></span>
+                    </h4>
+                    <p id="orderStatus">暫停接單</p>
+                </div>
+                <div id="myOrders1">
+                    <div id="myLoading">
+                        <div class="loadingio-spinner-spinner-2by998twmg8">
+                            <div class="ldio-yzaezf3dcmj">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/jquery-3.7.1.js"></script>
+    <script type="module" src="../js/backstage.js"></script>
+    <script type="module" src="../js/new_order.js"></script>
+</body>
+</html>

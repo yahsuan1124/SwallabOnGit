@@ -1,0 +1,327 @@
+header {
+    background-image: none;
+    background-color: #EEE9D5;
+}
+
+body {
+    background-image: url("./../images/background.webp");
+    background-attachment: fixed;
+}
+
+footer {
+    background-color: #ecdea8;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+}
+
+header,
+footer {
+    padding: 0;
+}
+
+.product-img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+
+.btn-outline-primary {
+    background-color: #e5a67a;
+    color: white;
+    border: none;
+    width: 100px;
+}
+
+.card-title,
+.card-text {
+    color: #6c757d;
+}
+
+.sidebar {
+    background-color: white;
+    padding: 20px;
+    min-height: 100vh;
+
+}
+
+.sidebar a {
+    color: white;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    background-color: #e5a67a;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background-color: #003f7f;
+}
+
+.product-details,
+.product-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-details span,
+.product-actions span {
+    margin: 5px 0;
+}
+
+.btn-quantity {
+    display: flex;
+    align-items: center;
+}
+
+.btn-quantity button {
+    border: none;
+    background-color: transparent;
+    font-size: 30px;
+}
+
+.btn-quantity span {
+    margin: 0 10px;
+    font-size: 20px;
+}
+
+.items {
+    font-size: 20px;
+
+}
+
+.price {
+    font-size: 20px;
+
+}
+
+.my-btn {
+    font-size: 20px;
+    width: 30px;
+    height: 50px;
+}
+
+.fs-20 {
+    font-size: 20px;
+}
+
+.trash {
+    font-size: 25px;
+    color: #003f7f;
+}
+
+.rounded-button {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 8px;
+
+}
+
+.btn-warning {
+    background-color: #e5a67a;
+    color: white;
+    border: none;
+    width: 100px;
+}
+
+.name {
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    padding: 0px 40px;
+    text-align: center;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.icon {
+    font-size: 30px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    padding: 0px 40px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+
+.follow {
+    font-size: 25px;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    padding: 0px 40px;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.edit {
+    margin-top: 60px;
+    margin-left: 90px;
+    color: white;
+    font-size: 15px;
+    display: block;
+    margin-bottom: 15px;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    background-color: #e5a67a;
+    text-decoration: none;
+    width: 150px;
+}
+
+.profile {
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.introduce {
+    border: 1px solid black;
+    padding: 20px;
+    margin: 20px;
+    width: 80%;
+    border-radius: 5px;
+    margin-left: 2px;
+}
+
+.email {
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    padding: 0px 40px;
+    display: flex;
+    margin-top: 20px;
+}
+
+
+.delete {
+    margin-top: 25px;
+    color: white;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 5px;
+    background-color: #e5a67a;
+    text-decoration: none;
+    width: 150px;
+    height: 40px;
+    margin-left: 70px;
+    margin-right: auto;
+    border: none;
+}
+
+
+/* 新增 */
+
+.mySidebar {
+    /* border: 1px solid #000; */
+    height: 300px;
+    margin: 15% 30px 0 0;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #aaa;
+    position: sticky;
+    top: 200px;
+}
+
+.mySidebar>a {
+    text-decoration: none;
+    color: #000;
+}
+
+.mySidebar>a>p {
+    border: 2px solid #000;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px;
+    padding: 10px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.mySidebar>.active>p:nth-child(1) {
+    background-color: #e5a67a;
+    color: #fff;
+}
+
+.mySidebar>a>p:hover {
+    background-color: #e5a67a;
+    color: #fff;
+}
+
+.options{
+    justify-content: space-around;
+    border-bottom: 1px solid #000;
+    margin: 30px;
+}
+.options>a{
+    text-decoration: none;
+    color: #000;
+}
+.options>a>h3{
+    padding: 20px;
+    border-radius: 5px;
+}
+.options a.active h3 {
+    background-color: #e5a67a;
+    font-weight: bolder;
+    color: #fff;
+}
+.options>a>h3:hover{
+    background-color: #e5a67a;
+    font-weight: bolder;
+    color: #fff;
+}
+.orderStatus {
+    display: flex;
+    justify-content: space-around;
+}
+.orderStatus>p {
+    border: 1px solid #000;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.orderStatus>p:hover {
+    font-weight: bolder;
+    box-shadow: 0 0 0 1px #000;
+}
+.optionContainer{
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px #aaa;
+    /* border: 1px solid #000; */
+}
+.optionContainer h4{
+    padding: 20px;
+}
+.optionContainer>.item> p{
+    padding: 20px;
+}
