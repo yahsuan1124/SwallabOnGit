@@ -23,14 +23,6 @@ try {
         $viewNumber = htmlspecialchars($row['count']); 
         $photoBlob = $row['main_photo'];
 
-        // // 自動判斷照片格式型態
-        // $photoMimeType = (new finfo(FILEINFO_MIME_TYPE))->buffer($photoBlob);
-        // // 轉base64
-        // $photoBase64 = base64_encode($photoBlob);
-
-        // // IMG的src
-        // $photoSrc = "data:{$photoMimeType};base64,{$photoBase64}";
-
         echo <<<HTML
         <div class="col-4 mb-4">
           <div class="card overflow-hidden">

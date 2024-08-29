@@ -5,7 +5,7 @@ document.getElementById("top").addEventListener("click", function () {
 //評論區滾動往下才會出現留言
 document.addEventListener("scroll", function () {
   const contents = document.querySelectorAll(".test");
-  const triggerBottom = (window.innerHeight / 6) * 5;
+  const triggerBottom = (window.innerHeight / 6) * 5;  //視窗隱藏或顯示的高度
 
   contents.forEach((content) => {
     const contentTop = content.getBoundingClientRect().top;
@@ -147,10 +147,7 @@ window.onload = () => {
 
  
 
-
-
-
-  //const form=document.getElementById("myform")
+    //留言：新增+編輯+刪除
   const messagesContainer = document.getElementById("messages-container");
 
   // 更新留言列表的函數
@@ -175,6 +172,7 @@ window.onload = () => {
 
         // "編輯"按鈕點開的modal
         document.querySelectorAll(".myedit").forEach((button) => {
+          //因為modal會開很多個，所以每次都先移除一個再開一個
           button.removeEventListener("click", myedit);
           button.addEventListener("click", myedit);
         });
@@ -221,7 +219,7 @@ window.onload = () => {
             .then((response) => response.text())
             .then((text) => {
               console.log(`獲取到的留言內容:`, text);
-              // 更新 modal 中的输入框内容
+              // 更新 modal 中的輸入框内容
               $("#editMessage").val(text);
             })
             .catch((error) => {
@@ -241,14 +239,14 @@ window.onload = () => {
                 .then((text) => {
                   console.log(text);
 
-                  // 提交成功后关闭 modal (bootstrap的)
+                  // 關掉modal (bootstrap的)
                   const modalElement = document.querySelector(".modal2");
                   const modal = bootstrap.Modal.getInstance(modalElement);
                   if (modal) {
                     modal.hide();
                   }
 
-                  // 提交成功后更新留言列表
+                  // 更新留言
                   updateMessages();
                 })
                 .catch((error) => console.error("修改留言有错:", error));

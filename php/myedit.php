@@ -16,9 +16,8 @@ try {
    
     // 設定內容類型
     header('Content-Type: text/html; charset=utf-8');
-    // print_r($rows);
     foreach ($rows as $row) {
-        $messageId =($row['content']); 
+        $messageId =$row['content']; 
         print $messageId;
     }
 } catch (PDOException $e) {

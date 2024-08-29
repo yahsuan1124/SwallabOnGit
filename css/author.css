@@ -40,11 +40,12 @@ footer{
   text-overflow: ellipsis; /* 使用省略號表示被隱藏的內容 */
 }
 .ellipsis-6{
+     display: block;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp:6;
+    -webkit-line-clamp: 6; /* 顯示的行數 */
     overflow: hidden;
-    text-overflow: ellipsis; /* 使用省略號表示被隱藏的內容 */
+    text-overflow: ellipsis; /* 添加省略號 */
 }
 
 /* 個人資訊 */

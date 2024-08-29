@@ -5,8 +5,7 @@ $user = "root";
 $password = "";
 $message = $_GET["message"];
 $dataMid = $_GET["id"];
-print($message);
-print($dataMid);
+
 try {
     // 建立資料庫連接
     $db = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $user, $password);

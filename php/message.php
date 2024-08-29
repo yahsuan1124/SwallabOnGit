@@ -10,9 +10,6 @@ $uid=1;
 try {
     // 建立資料庫連接
     $db = new PDO("mysql:host={$host};dbname={$dbname};charset=utf8", $user, $password);
-    // 關閉外鍵檢查
-    $db->exec('SET FOREIGN_KEY_CHECKS = 0;');
-    
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     
@@ -21,8 +18,7 @@ try {
 
     // 執行
     $stmt->execute([$message,$uid]);
-    // 重新開啟外鍵檢查
-    $db->exec('SET FOREIGN_KEY_CHECKS = 1;');
+    
     echo "留言：{$message}";
 } catch (PDOException $e) {
     // 顯示錯誤信息

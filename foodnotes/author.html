@@ -115,15 +115,15 @@
     <div class="container p-0">
       <div class="row d-flex justify-content-center p-0 mt-5 mb-2">
         <!-- 個人資訊 -->
-        <img src="../images/other/winnie.webp"class="img-fluid col-4 p-0 headphoto"/>
+        <img src=""class="img-fluid col-4 p-0 headphoto" id="headphoto"/>
         <div class="col-8 p-3">
           <div class="d-flex justify-content-center align-items-center p-3">
             <div class="d-flex" style="gap: 150px">
               <!-- 下面這個<div>不可以刪掉 -->
               <div>
                 <div class="d-flex justify-content-center align-items-center">
-                  <h3 class="authorName" style="margin-bottom: 40px">
-                    小熊維尼
+                  <h3 class="authorName" style="margin-bottom: 40px" id="authorName">
+                    
                   </h3>
                 </div>
                 <div class="social-icon">
@@ -136,8 +136,8 @@
               <div>
                 <div class="d-flex justify-content-center align-items-center">
                   <h4 class="followTitle">
-                    <strong>30</strong> 追蹤中
-                    <strong id="fans">100</strong> 粉絲
+                    <strong id="track"></strong> 追蹤中
+                    <strong id="fans"></strong> 粉絲
                   </h4>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
@@ -150,68 +150,15 @@
           <!-- 個人簡介 -->
           <div class="w-100 p-4">
             <h5>個人簡介：</h5>
-            <div class="mt-2 p-2 information">
-              嗨，大家好！我是小熊維尼，一名熱愛探尋各地美食的部落客。無論是大排長龍的網紅餐廳，還是街頭巷尾的隱藏美味，我都充滿好奇與熱情。
-              我從小就對食物有著濃厚的興趣，喜歡嘗試不同的口味和料理方式。這份熱情讓我開始了美食部落格之旅，希望能夠通過文字和照片，將我所品嚐到的每一份美味分享給大家。
-              在這裡，你不僅會找到餐廳的詳細評價和美食推薦，還能了解每道菜餚背後的故事和文化。我相信，食物是連接人與人之間最美好的橋梁。
-              希望我的分享能夠帶給你更多美食靈感，讓我們一起在這條美食之路上，發現更多的驚喜和感動。感謝你的支持和關注！
+            <div class="mt-2 p-2 information" id="bio">
+              
             </div>
           </div>
         </div>
 
         <!-- 博主之前發表過的食記 -->
-        <div class="mt-5 mb-5 p-0">
-          <div class="d-flex justify-content-center mt-4 m-0">
-            <div class="row d-flex justify-content-center m-2 p-0 foodNotes-bg">
-              <img src="../images/hotpot/qinghj.jpg" alt="" class="col-5 m-4" />
-              <div class="col-7 d-flex align-items-center">
-                <div class="p-4">
-                  <h4 class="mb-4">青花驕</h4>
-                  <a href="./demoHotpot.html" style="text-decoration: none;">
-                        <div class="ellipsis-6 history">
-                            青花驕麻辣鍋是王品集團推出的麻辣鍋品牌餐廳，麻辣湯頭加入重慶的九葉青花椒熬煮，鮮麻香醇，非常吸引我。想不到幫同事的慶生聚餐，壽星就選定青花驕麻辣鍋崇德店，當餐廳人選丟出來的時候，我完全是舉雙手雙腳同意的啊🙋‍♀️預訂好日期後，大家一起騎車前往青花驕麻辣鍋報到！<br />
-                            【青花驕麻辣鍋 台中崇德店】<br />
-                            📞電話：04-2422-3286 <br />
-                            🏡地址：台中市北屯區崇德路三段189號 <br />
-                            💰鍋底費130元/人；鴛鴦鍋每桌+收150元；青麻椒肥牛鍋每桌+收298元；每人低消300元(需加收10%服務費)
-                            <br />
-                            👶120cm以下兒童不收費
-                        </div>
-                  </a>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center mt-4 m-0">
-            <div class="row d-flex justify-content-center m-2 p-0 foodNotes-bg">
-              <img src="../images/hotpot/roudd.png" alt="" class="col-5 m-4" />
-              <div class="col-7 d-flex align-items-center">
-                <div class="p-4">
-                  <h4 class="mb-4">肉多多</h4>
-                  <div class="ellipsis-6 history">
-                    最近天氣終於變冷，最適合吃個暖暖的火鍋。說到火鍋，一定會想到已經開了近50家分店的「肉多多火鍋」。台中火鍋店的選擇有不少家，所以其實我已經一陣子沒去吃肉多多火鍋了啦。這次多虧了住在廣三SOGO附近的朋友約我去肉多多火鍋店慶生，我才發現肉多多火鍋進步不少，跟以前很不一樣了耶！肉品、湯頭都做了改版大升級，難怪最近幾年肉多多火鍋在網路上的評價相當高。
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="d-flex justify-content-center mt-4 m-0">
-            <div class="row d-flex justify-content-center m-2 p-0 foodNotes-bg">
-              <img src="../images/bbq/wuma.jpg" alt="" class="col-5 m-4" />
-              <div class="col-7 d-flex align-items-center">
-                <div class="p-4">
-                  <h4 class="mb-4">屋馬燒肉</h4>
-                  <div class="ellipsis-6 history">
-                    屋馬燒肉｜訂位很容易爆滿的知名台中燒肉店，屋馬菜單怎麼點才划算?
-                    台中最熱門最難訂位的燒肉店《屋馬燒肉》，跟茶六燒肉都是相當有名，《屋馬燒肉》在台北是沒有分店的，只有7家分店全部都是在台中，如果想要吃的話《屋馬燒肉》一定要先訂位，建議是屋馬燒肉線上訂位比較快，點餐方式有分套餐跟單點，大部份都是點套餐比較划算，套餐有前菜、肉品、海鮮與甜點等等，絕對是可以吃得飽的，網友說免費雞湯一定要喝。
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="mt-5 mb-5 p-0" id="history">
+          
         </div>
       </div>
     </div>
@@ -255,7 +202,6 @@
     <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/jquery-3.7.1.js"></script>
     <script src="../js/author.js"></script>
-    <script src="../js/footer.js"></script>
     <!-- <script src="../js/nav.js"></script> -->
   </body>
 </html>

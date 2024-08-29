@@ -18,9 +18,9 @@ try {
     $index = 0;
     foreach ($rows as $row) {
         $message = htmlspecialchars($row['content']);
-        $DateTime = new DateTime($row['commentsDate']);
+        $DateTime = new DateTime($row['commentsDate']);  //轉成時間日期格式
         $currentDateTime = new DateTime();
-        $minus = $currentDateTime->diff($DateTime);
+        $minus = $currentDateTime->diff($DateTime);  //兩個時間差，會回傳年月日等等的時間單位差異
 
         // 時間相差的判斷
         if ($minus->y > 0) {
@@ -40,14 +40,6 @@ try {
         $photoBlob = $row['avatar'];
         $mid = $row['commentsId'];
         $uid = $row['uid'];
-
-        // // 自動判斷照片格式型態
-        // $photoMimeType = (new finfo(FILEINFO_MIME_TYPE))->buffer($photoBlob);
-        // // 轉base64
-        // $photoBase64 = base64_encode($photoBlob);
-
-        // // IMG的src
-        // $photoSrc = "data:{$photoMimeType};base64,{$photoBase64}";
 
         echo <<<HTML
         <div class="d-flex justify-content-center mt-4 m-0 test"  data-uid={$uid} data-mid={$mid} id="test">
